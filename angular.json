@@ -27,7 +27,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap-material-design/dist/css/bootstrap-material-design.min.css",
+              "./src/assets/styles/bootstrap.css",
               "./node_modules/font-awesome/css/font-awesome.min.css",
               "./node_modules/primeicons/primeicons.css",
               "./node_modules/primeng/resources/themes/nova-light/theme.css",

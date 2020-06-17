@@ -1,17 +1,32 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary" >
-	<div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary py-4" >
+	<div class="container-fluid px-lg-5">
 		<button class="navbar-toggler mt-2" type="button" data-toggle="collapse" data-target="#navCollapseContent" aria-controls="navCollapseContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<a class="navbar-brand d-md-none d-lg-none d-none d-sm-block d-block" href="#"></a>
+		<a class="navbar-brand" href="#">
+			Barangay e-Portal
+		</a>
 
 		<div class="navbar-collapse collapse"  id="navCollapseContent">
-			<ul class="nav nav-tabs bg-primary ml-auto">
+			<ul class="nav text-white bg-primary ml-auto">
 			  <li class="nav-item">
 			    <a class="nav-link" routerLink="/">Home</a>
 			  </li>
+
+			  <li class="nav-item">
+			    <a class="nav-link" routerLink="/">About</a>
+			  </li>
+
+			  <li class="nav-item">
+			    <a class="nav-link" routerLink="/">Faqs</a>
+			  </li>
+
+			  <li class="nav-item">
+			    <a class="nav-link" routerLink="/">Inquire</a>
+			  </li>
+
 			  <li class="nav-item" *ngIf="!loggedInUser; else showDropdown">
-			    <a class="nav-link" routerLink="/user/signin">Sign in</a>
+			    <a class="nav-link" routerLink="/user/signin">Portal</a>
 			  </li>
 			  <ng-template #showDropdown>
 			    <li class="nav-item dropdown">

@@ -5,3 +5,43 @@
 		cursor: pointer;
 	}
 }
+
+
+.hvr-hang:before {
+  background-color: #ffbe00;
+}
+
+.nav-link{
+  font-size: 20px !important;
+}
+
+.nav-item{
+  margin-right: -30px !important;
+}
+
+.navbar-brand{
+  padding-left: 70px;
+}
+
+.nav-link, 
+.navbar-brand{
+  color: white !important;
+  letter-spacing: 1px !important;
+  font-weight: 2000 !important;
+}
+
+.navbar-nav{
+  padding-top: -10px !important;
+}
+
+.hvr-underline-from-center:before{
+  background-color: #2BBBAD !important;
+}
+
+.navbar{
+  z-index: 999999;
+}
+
+.navbar-toggler{
+  float: right !important;
+}

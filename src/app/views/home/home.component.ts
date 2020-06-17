@@ -12,10 +12,30 @@ import { Subscription } from 'rxjs';
 export class HomeComponent implements OnInit {
 	constructor() { }
 
+	public headerImages: any = [
+		'/assets/images/background/gallery_item.jpg',
+		'/assets/images/background/gallery_item_2.jpg',
+		'/assets/images/background/gallery_item_3.jpg',
+		'/assets/images/background/gallery_item_4.jpg'
+	];
+
+	public imageIndex = 0;
+	public headerImage = this.headerImages[this.imageIndex];
+
+
     ngOnInit() {
+		setInterval(() => { 
+			if(this.imageIndex === 0 && this.imageIndex < 4) this.imageIndex += 1;
+			else this.imageIndex = 0;
+
+			this.headerImage = this.headerImages[this.imageIndex];
+		}, 3000);
+
     }
 
 	ngOnDestroy(){
 	}
+
+
 
 }
