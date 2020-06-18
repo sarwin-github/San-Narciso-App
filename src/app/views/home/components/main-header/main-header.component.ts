@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { mainAnimations } from '../../../../shared/animations/main-animations';
+import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-main-header',
-  templateUrl: './main-header.component.html',
-  styleUrls: ['./main-header.component.css']
+	selector: 'main-header-section',
+	animations: [mainAnimations],
+	templateUrl: './main-header.component.html',
+	styleUrls: ['./main-header.component.scss']
 })
 export class MainHeaderComponent implements OnInit {
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+	}
 
 }

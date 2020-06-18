@@ -4,29 +4,29 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<a class="navbar-brand" href="#">
-			Barangay e-Portal
+			<img src="/assets/images/logo.png" class="img img-fluid mr-2" width="50px" > Barangay e-Portal
 		</a>
 
 		<div class="navbar-collapse collapse"  id="navCollapseContent">
 			<ul class="nav text-white bg-primary ml-auto">
 			  <li class="nav-item">
-			    <a class="nav-link" routerLink="/">Home</a>
+			    <a class="nav-link hvr-grow-rotate" routerLink="/">Home</a>
 			  </li>
 
 			  <li class="nav-item">
-			    <a class="nav-link" routerLink="/">About</a>
+			    <a class="nav-link hvr-grow-rotate" routerLink="/">About</a>
 			  </li>
 
 			  <li class="nav-item">
-			    <a class="nav-link" routerLink="/">Faqs</a>
+			    <a class="nav-link hvr-grow-rotate" routerLink="/">Faqs</a>
 			  </li>
 
 			  <li class="nav-item">
-			    <a class="nav-link" routerLink="/">Inquire</a>
+			    <a class="nav-link hvr-grow-rotate" routerLink="/">Inquire</a>
 			  </li>
 
 			  <li class="nav-item" *ngIf="!loggedInUser; else showDropdown">
-			    <a class="nav-link" routerLink="/user/signin">Portal</a>
+			    <a class="nav-link hvr-grow-rotate" routerLink="/user/signin">Portal</a>
 			  </li>
 			  <ng-template #showDropdown>
 			    <li class="nav-item dropdown">

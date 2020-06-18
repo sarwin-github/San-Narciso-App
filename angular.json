@@ -30,6 +30,7 @@
               "./src/assets/styles/bootstrap.css",
               "./node_modules/font-awesome/css/font-awesome.min.css",
               "./node_modules/primeicons/primeicons.css",
+              "./node_modules/hover.css/css/hover.css",
               "./node_modules/primeng/resources/themes/nova-light/theme.css",
               "./node_modules/primeng/resources/primeng.min.css",
               "src/styles.scss"
