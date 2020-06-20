@@ -9,6 +9,8 @@ import { MainHeaderComponent } from './components/main-header/main-header.compon
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { DashboardOverviewComponent } from './components/dashboard-overview/dashboard-overview.component';
+import { CovidTaskForceComponent } from './components/covid-task-force/covid-task-force.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { DashboardOverviewComponent } from './components/dashboard-overview/dash
   	AboutUsComponent,
   	ContactUsComponent,
   	DashboardOverviewComponent,
+  	CovidTaskForceComponent,
+  	FooterComponent,
   ]
 })
 export class HomeModule { }

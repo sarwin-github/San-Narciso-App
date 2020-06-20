@@ -14,3 +14,42 @@ body { margin: 0; font-family: 'Oswald', sans-serif !important;  }
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
 
+
+.bg-light-green{
+  background: #2BBBAD !important;
+}
+
+.bg-green-dark{
+  background: #00695c !important;
+}
+
+.btn:hover{
+  background: #00897b !important;
+}
+
+.bg-dark-blue{
+	background: #253c54 !important;
+}
+
+button.bg-dark-blue,
+span.bg-dark-blue{
+	&:hover{
+		background: #2f4963 !important;
+	}
+}
+
+.text-dark-blue{
+	color: #253c54 !important;
+}
+
+.text-light-blue{
+	color: #375A7F !important;
+}
+
+.bg-light-blue{
+	background: #375A7F !important;
+}
+
+.bg-dark-red{
+	background: #803b4d;
+}

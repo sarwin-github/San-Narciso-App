@@ -251,38 +251,3 @@ p{
 .input-btn{
   cursor: pointer;
 }
-
-.bg-light-green{
-  background: #2BBBAD !important;
-}
-
-.bg-green-dark{
-  background: #00695c !important;
-}
-
-.btn:hover{
-  background: #00897b !important;
-}
-
-.bg-dark-blue{
-	background: #253c54 !important;
-}
-
-button.bg-dark-blue,
-span.bg-dark-blue{
-	&:hover{
-		background: #2f4963 !important;
-	}
-}
-
-.text-dark-blue{
-	color: #253c54 !important;
-}
-
-.text-light-blue{
-	color: #375A7F !important;
-}
-
-.bg-light-blue{
-	background: #375A7F !important;
-}

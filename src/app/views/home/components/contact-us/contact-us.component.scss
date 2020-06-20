@@ -1,0 +1,240 @@
+.navigation-button{
+  position: absolute;
+  top: 50%;
+  right: -1%;
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
+  z-index: 9999;
+  background: rgb(37,60,84);
+  padding: 5px 15px 5px 15px !important;
+  border-radius: 15px;
+}
+
+.social{
+  color: #868686 !important;
+  font-weight: 500px !important;
+  font-size: 20px;
+  margin-right: 20px;
+  &:hover{
+    color: #868686 !important;
+    font-weight: 500px !important;
+  }
+}
+
+.img-thumbnail {
+  padding: 0.25rem;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.bg-img-abt-upper {
+  background: url(/assets/images/background/gallery_item_10.png) no-repeat center center !important; 
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0; 
+    right: 0;
+    top: 0; 
+    bottom: 0;
+    background: rgba(255,255,255,0.85);
+    height: 100%;
+  }
+}
+
+.bg-img-abt {
+	background: url(/assets/images/background/gallery_item_9.png) no-repeat center center !important; 
+	-webkit-background-size: cover !important;
+	-moz-background-size: cover !important;
+	-o-background-size: cover !important;
+	background-size: cover !important;
+	background-color: #375A7F !important;
+
+	&:before {
+		content: "";
+		position: absolute;
+		background: rgba(0,0,0,0.2);
+	}
+}
+
+
+#imageProfessional {
+    max-width: 10%;
+    max-height: 10%;
+    transform: scale(10);
+}
+
+
+
+.text-yellow-head{
+    text-shadow: 0px 1px 1px #000000;
+    letter-spacing: 3px !important;
+    color: #F39C12 !important;
+    font-weight: 600 !important;
+}
+
+.star {
+    font-size: 20px !important;
+}
+
+.fa-heart{
+    cursor: pointer !important;
+}
+
+.text-head{
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: 1000 !important;
+    font-size: 96px;
+    line-height: normal;
+    text-shadow: 0px 4px 30px #000000;
+}
+
+.text-shadow-head{
+    text-shadow: 0px 1px 1px #000000;
+    letter-spacing: 2px !important;
+    color: #2F4963 !important;
+}
+
+.input-btn{
+    cursor: pointer;
+}
+
+.text-black-border{
+    border-style: solid 3px #000 !important;
+}
+
+.text-dark{
+	color: #666 !important;
+}
+
+.text-dark-description{
+	color: #868686 !important;
+}
+
+.box .swap {
+  display: inline-block;
+  position: relative;
+  min-width: 1em;
+  min-height: 1em;
+  transition-duration: 0.5s;
+  transition-property: transform width;
+}
+.box .swap dd {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  white-space: nowrap;
+  border-radius: 0.2em;
+  padding: 0.2em 0.5em;
+  background-color: #00c853 ;
+  color: #c5f7ed;
+  transition-duration: 0.5s;
+  transition-property: opacity;
+}
+.box .swap dd.visible {
+  opacity: 1;
+}
+
+
+
+.btn-white-transparent-icon:hover{
+  color: #2f1053 !important;
+}
+
+
+.btn-red-transparent{
+  color: #fff;
+  background: rgba(255,255,255, 0);
+  font-weight: 600 !important;
+  border-color: #bf360c;
+  border-width: 3px;
+  border-radius: 0px;
+  padding: 6px 30px;
+}
+
+.btn-red-transparent:hover{
+  color: #fff !important;
+}
+
+.btn-black-transparent{
+  color: #2E2E2E;
+  background: rgba(255,255,255, 0);
+  font-weight: 600 !important;
+  border-color: #2E2E2E;
+  border-width: 3px;
+  border-radius: 0px;
+  padding: 6px 30px;
+}
+
+.btn-black-transparent:hover{
+  color: #2E2E2E !important;
+}
+
+.btn-white-transparent{
+  color: whitesmoke;
+  background: rgba(255,255,255, 0);
+  font-weight: 500 !important;
+  border-color: #fff;
+  border-width: 3px;
+  border-radius: 0px;
+  padding: 6px 30px;
+}
+
+.btn-white-transparent:hover{
+  color: #fff !important;
+}
+
+.btn-yellow-transparent{
+  color: #FEDC32;
+  background: rgba(255,255,255, 0);
+  font-weight: 500 !important;
+  border-color: #FEDC32;
+  border-width: 3px;
+  border-radius: 0px;
+  padding: 2px 30px;
+}
+
+.input-yellow{
+  border-color: #FEDC32 !important;
+  border-width: 3px !important;
+  border-radius: 0px !important;
+  padding: 6px 30px !important;
+}
+
+.btn-yellow-transparent:hover{
+  color: #FEDC32 !important;
+}
+
+.btn-white-transparent-icon{
+  color: #2f1053;
+  background: white;
+  border-color: #2f1053;
+  padding: 10px !important;
+  width: 50px !important;
+  border-radius: 15px;
+  border-width: 2px !important;
+  font-size: 20px !important;
+}
+
+.pointer{
+    cursor: pointer !important;
+}
+
+a:hover{
+  text-decoration: none !important;
+}
+
+.input-border{
+  border: solid 2px gray !important;
+}

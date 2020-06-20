@@ -36,6 +36,8 @@ export class HomeComponent implements OnInit {
 	ngOnDestroy(){
 	}
 
-
+	goToTop(){
+		window.scrollTo({ top: 0, behavior: 'smooth'});
+	}
 
 }
