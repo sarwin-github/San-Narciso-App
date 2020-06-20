@@ -1,64 +1,3 @@
-
-
-.social{
-	color: whitesmoke !important;
-	font-weight: 500px !important;
-
-	&:hover{
-		color: #ad1457 !important;
-		font-weight: 500px !important;
-	}
-}
-
-.animate-me {
-  -webkit-animation: bgcolorchange 10s infinite; /* Chrome, Safari, Opera */ 
-  animation: 10s infinite bgcolorchange;
-}
-
-@keyframes bgcolorchange {
-  0% {
-    background-color: red;
-  }
-  25% {
-    background-color: green;
-  }
-  50% {
-    background-color: yellow;
-  }
-  75% {
-    background-color: yellow;
-  }
-  100% {
-    background-color: red;
-  }
-}
-/* Chrome, Safari, Opera */
- @-webkit-keyframes bgcolorchange {
-      0%   {background: red;}
-      25%  {background: yellow;}
-      75%  {background: green;}
-      100% {background: blue;}
- }
-
-
-.bg-img {
-	background: url(/assets/images/background/gallery_item.jpg) no-repeat center center; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-
-	&:before {
-		content: "";
-		position: absolute;
-		left: 0; 
-		right: 0;
-		top: 0; 
-		bottom: 0;
-		background: rgba(0,0,0,0.2);
-	}
-}
-
 .btn-dark, .btn-danger{
 	&:hover{
 		background-color: white;
@@ -125,14 +64,6 @@ p{
 	}
 }
 
-.enlarge {
-	-webkit-transition: all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	-ms-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
-	transition: all 0.3s ease;
-}
-
 .line-1{
 	width: 24em;
 	margin: 0 auto;
@@ -143,20 +74,7 @@ p{
 	transform: translateY(-50%);    
 }
 
-/* Animation */
-.typewriter{
-	animation: typewriter 4s steps(44) 1s 1 normal both,
-	blinkTextCursor 500ms steps(44) infinite normal;
 
-}
-@keyframes typewriter{
-	from{width: 0;}
-	to{width: 26em;}
-}
-@keyframes blinkTextCursor{
-	from{border-right-color: rgba(255,255,255,.75);}
-	to{border-right-color: transparent;}
-}
 
 
 .team-member{
@@ -237,47 +155,3 @@ p{
     }
 }
 
-
-.text-head{
-  font-family: Oswald;
-  font-style: normal;
-  font-weight: 1000 !important;
-  font-size: 80px;
-  line-height: normal;
-  text-shadow: 0px 4px 30px #000000;
-}
-
-.input-btn{
-  cursor: pointer;
-}
-
-.bg-light-green{
-  background: #2BBBAD !important;
-}
-
-.bg-green-dark{
-  background: #00695c !important;
-}
-
-.btn:hover{
-  background: #00897b !important;
-}
-
-.bg-dark-blue{
-	background: #253c54 !important;
-	&:hover{
-		background: #2f4963 !important;
-	}
-}
-
-.text-dark-blue{
-	color: #253c54 !important;
-}
-
-.text-light-blue{
-	color: #375A7F !important;
-}
-
-.bg-light-blue{
-	background: #375A7F !important;
-}
