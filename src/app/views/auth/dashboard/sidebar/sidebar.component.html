@@ -1,0 +1,68 @@
+<!-- Sidebar -->
+<div id="sidebar-container"
+[style.width.px]="sidebarWidth" class="sidebar-expanded d-none d-sm-none d-md-block"><!-- d-* hiddens the Sidebar in smaller devices. Its itens can be kept on the Navbar 'Menu' -->
+  <!-- Bootstrap List Group -->
+  <ul class="list-group">
+    <!-- Separator with title -->
+    <!-- /END Separator -->
+    <!-- Menu with submenu -->
+    <a class="list-group-item list-group-item-action d-flex align-items-center mb-4">
+      <div class="d-flex w-100 justify-content-start align-items-center">
+        <span class="menu-toggle">
+          <img (click)="openToggle()" 
+          *ngIf="!open" src="/assets/images/hamburger.svg" >
+        </span>
+        <span  class="menu-toggle">
+          <img (click)="openToggle()" 
+          *ngIf="open" src="/assets/images/cross_and_close.svg" width="30px">
+        </span>
+      </div>
+    </a>
+
+    <!-- DASHBOARD SECTION -->
+    <a 
+    [ngClass]="!open && location.match('/community/dashboard') ? 'router-link-active' : 
+    open && location.match('/community/dashboard') ? 'router-link-active-parent pl-3': ''"
+    class="list-group-item flex-column align-items-start py-3">
+      <div class="d-flex w-100 justify-content-start align-items-center">
+        <span> <img src="/assets/images/company_dashboard_menu.svg"></span>
+        <span class="menu-collapsed" *ngIf="linkDisplayed">Dashboard</span>
+        <span class="submenu-icon ml-auto"></span>
+      </div>
+    </a>
+    
+    <a 
+    [ngClass]="!open && location.match('/community/citizen') ? 'router-link-active' : 
+    open && location.match('/community/citizen') ? 'router-link-active-parent pl-3': ''"
+    class="list-group-item flex-column align-items-start py-3">
+      <div class="d-flex w-100 justify-content-start align-items-center">
+        <span> <img src="/assets/images/company_dashboard_menu.svg"></span>
+        <span class="menu-collapsed" *ngIf="linkDisplayed">Residency</span>
+        <span class="submenu-icon ml-auto"></span>
+      </div>
+    </a>
+
+    <a 
+    [ngClass]="!open && location.match('/community/citizen') ? 'router-link-active' : 
+    open && location.match('/community/citizen') ? 'router-link-active-parent pl-3': ''"
+    class="list-group-item flex-column align-items-start py-3">
+      <div class="d-flex w-100 justify-content-start align-items-center">
+        <span> <img src="/assets/images/company_dashboard_menu.svg"></span>
+        <span class="menu-collapsed" *ngIf="linkDisplayed">Blotter</span>
+        <span class="submenu-icon ml-auto"></span>
+      </div>
+    </a>
+
+    <a 
+    [ngClass]="!open && location.match('/community/citizen') ? 'router-link-active' : 
+    open && location.match('/community/citizen') ? 'router-link-active-parent pl-3': ''"
+    class="list-group-item flex-column align-items-start py-3">
+      <div class="d-flex w-100 justify-content-start align-items-center">
+        <span> <img src="/assets/images/company_dashboard_menu.svg"></span>
+        <span class="menu-collapsed" *ngIf="linkDisplayed">Barangay Clearance</span>
+        <span class="submenu-icon ml-auto"></span>
+      </div>
+    </a>
+
+  </ul><!-- List Group END-->
+</div><!-- sidebar-container END -->

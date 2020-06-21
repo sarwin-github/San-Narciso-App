@@ -1,0 +1,139 @@
+:host{
+  background:#fff;
+}
+nav.navbar {
+  box-shadow: 0 7px 6px rgba(0,0,0,.05);
+}
+.list-group-item {
+  background-color: #fff;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 0 !important;
+  color: #375A7F !important;
+}
+div#sidebar-container {
+  height:100%;
+  width: 210px;
+  transition: cubic-bezier(0.19, 1, 0.22, 1);
+  transition-duration: 1s;
+  position: relative;
+}
+
+div#sidebar-container.sidebar-collapsed {
+  transition: cubic-bezier(0.19, 1, 0.22, 1);
+  transition-duration: 1s;
+}
+
+span.menu-collapsed.d-none {
+visibility: hidden;
+opacity: 0;
+}
+span.menu-collapsed {
+  margin-left: 15px;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+.list-group{
+  height:100vh;
+  padding-top: 30px;
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 100px !important;
+}
+
+.bg-gray{
+
+}
+
+.router-link-active {
+  border-right: 4px solid #5473e8 !important;
+  display: flex;
+  background: #f5f5f5 !important;
+  transition: all 0.2s;
+}
+
+.router-link-active-parent {
+  border-right: 4px solid #5473e8 !important;
+  background: #f5f5f5 !important;
+  display: flex;
+  transition: all 0.1s;
+}
+
+.router-link-active-child{
+  border-bottom: solid #c9c9c9 1px;
+  transition: all 0.2s;
+}
+
+/* Sidebar sizes when expanded and expanded */
+.sidebar-expanded {
+  width: 240px;
+}
+.sidebar-collapsed {
+  width: 60px;
+}
+span#collapse-icon2 {
+  margin-left: 2px;
+}
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: .35rem 1.25rem;
+  margin-bottom: -1px;
+  background-color: #fff;
+  margin-bottom: 0px;
+  color: black;
+  cursor: pointer !important;
+  span{
+    &:hover{
+      cursor: pointer;
+      text-decoration: none !important;
+    }
+  }
+}
+
+.list-group-item:first-child{
+  width:50px;
+}
+.list-group-item img {
+  width: 20px;
+}
+.menu-toggle img {
+  width: 15px !important;
+  margin-left: 6px;
+  cursor: pointer !important;
+}
+
+.list-group ul {
+  //border-top: 1px solid #ccc;
+  //border-bottom: 1px solid #ccc;
+  margin-left: 50px;
+  padding-left: 0;
+  margin-bottom: 10px;
+
+}
+
+.list-group ul li {
+  list-style-type:none;
+  padding-left:0 !important;
+  padding: 5px 0;
+  outline-style:none !important;
+
+  &:hover{
+    cursor: pointer;
+    border-bottom: solid #c9c9c9 1px;
+  } 
+}
+.list-group-item2 {
+  
+}
+.list-group ul li a{
+  font-size:14px;
+}
+a{
+  &:hover{
+    text-decoration: none !important;
+  }
+}

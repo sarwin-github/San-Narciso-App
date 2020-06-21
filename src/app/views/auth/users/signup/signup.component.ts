@@ -41,10 +41,12 @@ export class SignupComponent implements OnInit {
   		this.userSignupForm = this.formBuilder.group({
 	      'email'      : [null, Validators.compose([Validators.required, Validators.email])],
 	      'password'   : [null, Validators.compose([Validators.required, Validators.minLength(6)])],
-	      'confirmPassword' : [null, Validators.compose([Validators.required, Validators.minLength(6)])],
+	      'confirmPassword': [null, Validators.compose([Validators.required, Validators.minLength(6)])],
 	      'name'       : [null, Validators.compose([Validators.required])],
 	      'address'    : [null, Validators.compose([Validators.required])],
-	      'phone'      : [null, Validators.compose([Validators.required])]
+	      'phone'      : [null, Validators.compose([Validators.required])],
+	      'municipality': [null, Validators.compose([Validators.required])],
+	      'role'      : ['Select Role', Validators.compose([Validators.required])]
 	    });
   	}
 
@@ -59,7 +61,9 @@ export class SignupComponent implements OnInit {
 		this.user.confirmPassword = this.userSignupForm.get('confirmPassword').value;
 		this.user.name            = this.userSignupForm.get('name').value;
 		this.user.address         = this.userSignupForm.get('address').value;
-		this.user.phone         = this.userSignupForm.get('phone').value;
+		this.user.phone           = this.userSignupForm.get('phone').value;
+		this.user.role            = this.userSignupForm.get('role').value;
+		this.user.municipality    = this.userSignupForm.get('municipality').value;
 
 		// initialize inputs
 	  	let body  = {
@@ -68,7 +72,9 @@ export class SignupComponent implements OnInit {
 	  		'confirm-password': this.user.confirmPassword,
 	  		'name'     : this.user.name,
 	  		'address'  : this.user.address,
-	  		'phone'    : this.user.phone
+	  		'phone'    : this.user.phone,
+	  		'role'     : this.user.role,
+	  		'municipality' : this.user.municipality
 	  	};
 
 		// execute http post request
@@ -143,4 +149,6 @@ interface IUserInput{
 	confirmPassword : string;
 	address         : string;
 	phone           : string;
+	role            : string,
+	municipality    : string
 }

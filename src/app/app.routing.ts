@@ -24,6 +24,16 @@ export const rootRouterConfig: Routes = [
     ]
   },
   {
+    path: '',
+    component: HeaderComponent,
+    children: [
+      {
+        path: 'community',
+        loadChildren: './views/auth/dashboard/dashboard.module#DashboardModule'
+      }
+    ]
+  },
+  {
     path: '**',
     redirectTo: 'error/404'
   }

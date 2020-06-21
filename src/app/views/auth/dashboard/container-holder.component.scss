@@ -1,0 +1,276 @@
+#body-row {
+  margin-left:0;
+  margin-right:0;
+  width:100%;
+  flex-wrap: nowrap !important;
+  background-color: #ebebeb;
+}
+#sidebar-container {
+  // min-height: 100vh;
+  background-color: #333;
+  padding: 0;
+}
+
+/* Menu item*/
+#sidebar-container .list-group a {
+  height: 50px;
+  color: white;
+}
+
+/* Submenu item*/
+#sidebar-container .list-group .sidebar-submenu a {
+  height: 45px;
+  padding-left: 30px;
+}
+.sidebar-submenu {
+  font-size: 0.9rem;
+}
+
+/* Separators */
+.sidebar-separator-title {
+  background-color: #333;
+  height: 35px;
+}
+.sidebar-separator {
+  background-color: #333;
+  height: 25px;
+}
+.logo-separator {
+  background-color: #333;
+  height: 60px;
+}
+
+/* Closed submenu icon */
+#sidebar-container .list-group .list-group-item[aria-expanded="false"] .submenu-icon::after {
+content: " \f0d7";
+font-family: FontAwesome;
+display: inline;
+text-align: right;
+padding-left: 10px;
+}
+/* Opened submenu icon */
+#sidebar-container .list-group .list-group-item[aria-expanded="true"] .submenu-icon::after {
+content: " \f0da";
+font-family: FontAwesome;
+display: inline;
+text-align: right;
+padding-left: 10px;
+}
+
+@media (max-width: 374px){
+  .admin-bg{
+    padding-top: 100px;
+    padding-left: 0px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-right: 0px;
+    position: relative;
+    overflow-y: auto !important;
+  }
+
+  ::ng-deep .zoom-in{
+    display: none !important;
+  }
+
+  ::ng-deep .top-dashboard-container{
+    overflow-x: scroll !important;
+    margin-left: 10px !important;
+  }
+
+  ::ng-deep .list-table{
+    overflow-x: scroll;
+    width: 100%;
+  }
+
+  ::ng-deep .table-section{
+    
+  }
+
+  ::ng-deep .data-table{
+    min-width: 600px;
+    overflow-x: scroll;
+    margin-right: 10px !important;
+    padding-right: 10px;
+  }
+
+  ::ng-deep .mat-table {
+    background: #fff;
+    width: 100%;
+  }
+
+  ::ng-deep .scenario-planning-table-section{
+    padding-left: 8px !important;
+    padding-right: 20px !important;
+  }
+
+  ::ng-deep .white-box-top-head-loading{
+    margin-left: 20px !important;
+  }
+
+  ::ng-deep .white-box-product{
+    padding-left: 15px !important;
+    padding-right: 0px !important;
+    margin-left: 20px !important;
+  }
+
+  ::ng-deep .white-box-filter{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    margin-left: 20px !important;
+  }
+
+  ::ng-deep .white-box{
+    margin-left: 20px !important;
+  } 
+
+  ::ng-deep .top-scroller-right{
+    right: 0px !important;
+  }
+
+  ::ng-deep .top-scroller-left{
+    left: 0px !important;
+  }
+
+  ::ng-deep .custom-loader{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+
+    ::ng-deep .white-box-loader{
+      margin-left: 20px !important;
+      margin-top: 20px !important;
+    }
+  }
+
+  ::ng-deep .title-head-main{
+    margin-right: 30px !important;
+    padding-left: 20px !important;
+  }
+
+  ::ng-deep .title-head-main-loading{
+    margin-right: 30px !important;
+    padding-left: 20px !important;
+  }
+}
+
+
+@media (min-width: 375px) and (max-width: 500px){
+  .admin-bg{
+    padding-top: 100px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: -5px;
+    position: relative;
+    overflow-y: auto !important;
+  }
+
+  ::ng-deep .zoom-in{
+    display: none !important;
+  }
+
+  ::ng-deep .top-dashboard-container{
+    overflow-x: scroll !important;
+  }
+
+  ::ng-deep .white-box-product{
+    padding-left: 15px !important;
+    padding-right: 0px !important;
+    margin-left: 10px !important;
+  }
+
+  ::ng-deep .list-table{
+    overflow-x: scroll;
+    width: 100%;
+  }
+
+  ::ng-deep .table-section{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
+  ::ng-deep .data-table{
+    min-width: 600px;
+    overflow-x: scroll;
+    margin-right: 10px !important;
+    padding-right: 10px;
+  }
+
+  ::ng-deep .mat-table {
+    background: #fff;
+    width: 100%;
+  }
+
+  ::ng-deep .scenario-planning-table-section{
+    padding-left: 8px !important;
+    padding-right: 20px !important;
+  }
+
+  ::ng-deep .white-box{
+    margin-left: 10px !important;
+  }
+
+  ::ng-deep .white-box-filter{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
+  ::ng-deep .top-scroller-right{
+    right: 0px !important;
+  }
+
+  ::ng-deep .top-scroller-left{
+    left: 0px !important;
+  }
+
+  ::ng-deep .custom-loader{
+    margin-right: 5px !important;
+    margin-left: 5px !important;
+
+    ::ng-deep .white-box-loader{
+      margin-left: 10px !important;
+      margin-top: 20px !important;
+    }
+  }
+
+  ::ng-deep .title-head-main{
+    margin-right: 30px !important;
+    padding-left: 15px !important;
+  }
+
+  ::ng-deep .title-head-main-loading{
+    margin-right: 30px !important;
+    padding-left: 15px !important;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 712px){
+  ::ng-deep .top-dashboard-container{
+    overflow-x: scroll !important;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 990px){
+  .admin-bg{
+    padding-top: 120px;
+    padding-left: 30px;
+    position: relative;
+    overflow-y: auto !important;
+  }
+}
+
+@media (min-width: 991px){
+  .admin-bg{
+    padding-top: 50px;
+    padding-left: 40px;
+    padding-right: 60px !important;
+    position: relative;
+    overflow-y: auto !important;
+  }
+}
+
+@media (min-width: 991px){
+  .navbar-expand-md .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+    flex-flow: row-reverse;
+  }
+}
