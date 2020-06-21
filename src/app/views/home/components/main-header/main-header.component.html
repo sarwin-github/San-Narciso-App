@@ -1,10 +1,20 @@
 <div class="row py-5 bg-img">
 	<div class="col-md-5 pl-5 pt-lg-5">
-		<div class="text-left pl-5" [@animate]="{value:'*', params:{ y:'30px', delay:'300ms' }}">
+		<div class="text-left pl-5 d-none d-sm-none d-md-block" 
+		[@animate]="{value:'*', params:{ y:'30px', delay:'300ms' }}">
 			<h1 class="text-white text-uppercase text-head pl-lg-5">
 				BARANGAY <br>e-<span class="text-success">PORTAL</span>,
 				<br>Security <small>&</small>
 				<span class="text-warning"><br>Information</span> 
+			</h1>
+		</div>
+
+		<div class="text-left d-block d-sm-block d-md-none mb-4" 
+		[@animate]="{value:'*', params:{ y:'30px', delay:'300ms' }}">
+			<h1 class="text-white text-uppercase text-head pl-lg-5">
+				BARANGAY e-<span class="text-success">PORTAL</span>,
+				<br>Security <small>&</small>
+				<span class="text-warning">Information</span> 
 			</h1>
 		</div>
 		<br>
@@ -46,7 +56,7 @@
 			<div class="col-md-4"></div>
 			<div class="col-md-10">
 				
-				<div class="input-group mb-3 mt-3 pl-5">
+				<div class="input-group mb-3 mt-3 pl-md-5">
 					<input type="text" class="form-control py-4" placeholder="SEARCH IN OUR BARANGAY" 
 					aria-label="Recipient's username">
 					<div class="input-group-append">

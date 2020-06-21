@@ -18,7 +18,7 @@ div#sidebar-container {
   width: 210px;
   transition: cubic-bezier(0.19, 1, 0.22, 1);
   transition-duration: 1s;
-  position: relative;
+  position: relative !important;
 }
 
 div#sidebar-container.sidebar-collapsed {
@@ -36,12 +36,16 @@ span.menu-collapsed {
   opacity: 1;
   transition: visibility 0s, opacity 0.5s linear;
 }
+
 .list-group{
   height:100vh;
   padding-top: 30px;
-  position: -webkit-sticky !important;
-  position: sticky !important;
-  top: 100px !important;
+  position: fixed !important;
+  top: 130px !important;
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+  transition: cubic-bezier(0.19, 1, 0.22, 1);
+  transition-duration: 1s;
 }
 
 .bg-gray{

@@ -246,6 +246,14 @@ p{
   font-size: 80px;
   line-height: normal;
   text-shadow: 0px 4px 30px #000000;
+
+  @media (min-width: 500px) and (max-width: 799px){
+  	font-size: 40px;
+  }
+
+  @media (max-width: 499px){
+  	font-size: 30px;
+  }
 }
 
 .input-btn{
