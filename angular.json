@@ -28,6 +28,7 @@
             ],
             "styles": [
               "./src/assets/styles/bootstrap.css",
+              "./node_modules/aos/dist/aos.css",
               "./node_modules/font-awesome/css/font-awesome.min.css",
               "./node_modules/primeicons/primeicons.css",
               "./node_modules/hover.css/css/hover.css",

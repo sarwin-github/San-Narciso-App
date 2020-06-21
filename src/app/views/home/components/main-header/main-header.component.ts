@@ -13,10 +13,11 @@ export class MainHeaderComponent implements OnInit {
 	public firstHead: boolean = true;
 	public secondHead: boolean = true;
 	public thirdHead: boolean = true;
+	public loading: boolean = true;
 	constructor() { }
 
 	ngOnInit(): void {
-
+		setTimeout(() => this.loading = false, 200);
 		setInterval(() => {
 			if(this.firstHead){
 				this.firstHead = false;
