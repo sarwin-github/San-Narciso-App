@@ -50,18 +50,19 @@
 	background-color: #fff !important;
 	border-bottom-left-radius:32%;
 	border-bottom-right-radius:32%;
+	position: relative !important;
 
 	&:before {
 		content: "";
 		position: absolute;
-		left: 0; 
-		right: 0;
+		left: 15px; 
+		right: 15px;
 		top: 0; 
 		bottom: 0;
 		background: rgba(0,0,0,0.2);
-		height: 95%;
-		border-bottom-left-radius:32%;
-		border-bottom-right-radius:32%;
+		height: 99.5%;
+		border-bottom-left-radius:33%;
+		border-bottom-right-radius:34.5%;
 	}
 }
 

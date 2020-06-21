@@ -57,7 +57,7 @@ span.bg-dark-blue{
 }
 
 .form-control{
-  border: #DFDFDF solid 1px !important;
+  border: #d9d9d9 solid 1px !important;
 }
 
 .text-dark-blue{
@@ -195,10 +195,10 @@ span.bg-dark-blue{
   border-width: 3px;
   border-radius: 0px;
   padding: 6px 30px;
-}
-
-.btn-white-transparent:hover{
-  color: #fff !important;
+  &:hover{
+    background: transparent !important;
+    color: #fff !important;
+  }
 }
 
 .btn-yellow-transparent{
