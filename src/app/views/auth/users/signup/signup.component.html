@@ -2,12 +2,12 @@
 	<div class="row">
 		<div class="col-md-8 offset-md-2 px-md-0 pt-md-5 pr-md-5" style="position: relative !important;">
 			<div class="px-4 pt-lg-3">
-				<div class="card bg-light-blue px-4 ml-3">
-					<div class="card-header text-uppercase py-4 bg-dark-blue" 
+				<div class="card bg-white container-shadow px-4 ml-3">
+					<div class="card-header text-uppercase py-4 px-5 bg-dark-blue" 
 					style="position: absolute !important; top: -30px !important;">
 						<span style="font-size: 18px !important;">Create a new account</span>
 					</div>
-					<div class="card-body bg-light-blue pt-5">
+					<div class="card-body bg-white pt-5">
 						<form class="px-3" (submit)="signUpUser($event)" [formGroup]="userSignupForm">
 							<!-- Error Message -->
 							<div class="alert alert-danger alert-dismissible fade show error-message" [@animate]="{value:'*', params:{ y:'50px', delay:'600ms' }}" *ngIf="error" role="alert">
@@ -23,7 +23,7 @@
 							
 
 							<div class="form-group">
-								<p class="text-justify text-white mt-2">
+								<p class="text-justify text-dark mt-2">
 									Lorem ipsum dolor sit amet, veri modus conceptam mel cu, has in dictas discere qualisque, saperet ullamcorper ad eum. 
 								</p>
 
@@ -37,7 +37,7 @@
 								<input type="password" class="form-control py-4" formControlName="confirmPassword" placeholder="Confirm Password">
 							</div>
 
-							<h4 class="text-white mt-5">Account Details</h4>
+							<h4 class="text-dark mt-5">Account Details</h4>
 
 							<div class="form-group">
 								<!-- <input type="text" class="form-control py-4" placeholder="Role" formControlName="role" required> -->
@@ -69,7 +69,7 @@
 							</div>
 
 							<div class="text-center">
-								<a [routerLink]="'/user/signin'" class="text-white text-center full-width">Do you have an account already? Sign in now.</a><br>
+								<a [routerLink]="'/user/signin'" class="text-dark text-center full-width">Do you have an account already? Sign in now.</a><br>
 							</div>
 
 							<button type="submit" class="btn bg-dark-blue float-right mt-3 px-5">Submit</button>

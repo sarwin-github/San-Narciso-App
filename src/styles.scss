@@ -49,6 +49,17 @@ span.bg-dark-blue{
 	}
 }
 
+.container-shadow{
+  border-radius: 2px;
+  -webkit-box-shadow: 12px 13px 0px 2px rgba(0,0,0,0.2);
+  -moz-box-shadow: 12px 13px 0px 2px rgba(0,0,0,0.2);
+  box-shadow: 12px 13px 0px 2px rgba(0,0,0,0.2);
+}
+
+.form-control{
+  border: #DFDFDF solid 1px !important;
+}
+
 .text-dark-blue{
 	color: #253c54 !important;
 }
