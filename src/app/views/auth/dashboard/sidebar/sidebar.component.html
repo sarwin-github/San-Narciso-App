@@ -20,7 +20,7 @@
     </a>
 
     <!-- DASHBOARD SECTION -->
-    <a 
+    <a routerLink="/community/dashboard"
     [ngClass]="!open && location.match('/community/dashboard') ? 'router-link-active' : 
     open && location.match('/community/dashboard') ? 'router-link-active-parent pl-3': ''"
     class="list-group-item flex-column align-items-start py-3">
@@ -32,13 +32,24 @@
       </div>
     </a>
     
-    <a 
-    [ngClass]="!open && location.match('/community/citizen') ? 'router-link-active' : 
-    open && location.match('/community/citizen') ? 'router-link-active-parent pl-3': ''"
+    <a routerLink="/community/residents"
+    [ngClass]="!open && location.match('/community/residents') ? 'router-link-active' : 
+    open && location.match('/community/residents') ? 'router-link-active-parent pl-3': ''"
     class="list-group-item flex-column align-items-start py-3">
       <div class="d-flex w-100 justify-content-start align-items-center">
         <span class="material-icons">face </span>
-        <span class="menu-collapsed" *ngIf="linkDisplayed">Residency</span>
+        <span class="menu-collapsed" *ngIf="linkDisplayed">Residents</span>
+        <span class="submenu-icon ml-auto"></span>
+      </div>
+    </a>
+
+    <a routerLink="/community/households"
+    [ngClass]="!open && location.match('/community/households') ? 'router-link-active' : 
+    open && location.match('/community/households') ? 'router-link-active-parent pl-3': ''"
+    class="list-group-item flex-column align-items-start py-3">
+      <div class="d-flex w-100 justify-content-start align-items-center">
+        <span class="material-icons">house_siding </span>
+        <span class="menu-collapsed" *ngIf="linkDisplayed">Households</span>
         <span class="submenu-icon ml-auto"></span>
       </div>
     </a>
@@ -59,7 +70,7 @@
     open && location.match('/community/citizen') ? 'router-link-active-parent pl-3': ''"
     class="list-group-item flex-column align-items-start py-3">
       <div class="d-flex w-100 justify-content-start align-items-center">
-        <span class="material-icons">perm_camera_mic </span>
+        <span class="material-icons">history_edu </span>
         <span class="menu-collapsed" *ngIf="linkDisplayed">Barangay Clearance</span>
         <span class="submenu-icon ml-auto"></span>
       </div>
