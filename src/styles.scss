@@ -58,6 +58,9 @@ span.bg-dark-blue{
 
 .form-control{
   border-bottom: #868686 solid 1px !important;
+  &:focus{
+    z-index: 9;
+  }
 }
 
 .text-dark-blue{

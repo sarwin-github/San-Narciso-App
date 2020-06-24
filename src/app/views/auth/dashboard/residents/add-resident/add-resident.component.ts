@@ -27,40 +27,40 @@ export class AddResidentComponent implements OnInit {
 		this.residentForm = this.formBuilder.group({
 			'email'     	 : [null, Validators.compose([Validators.required, Validators.email])],
 			// personal
-			'first_name'	: [null, Validators.compose([Validators.required])],
-			'middle_name'	: [null, Validators.compose([Validators.required])],
-			'last_name'		: [null, Validators.compose([Validators.required])],
-			'street'		: [null, Validators.compose([Validators.required])],
-			'barangay'		: [null, Validators.compose([Validators.required])],
-			'city'			: [null, Validators.compose([Validators.required])],
-			'phone'			: [null, Validators.compose([Validators.required])],
-			'citizenship'	: [null, Validators.compose([Validators.required])],
-			'religion'		: [null, Validators.compose([Validators.required])],
-			'province'		: [null, Validators.compose([Validators.required])],
-			'gender'		: [null, Validators.compose([Validators.required])],
+			'first_name'	: [null, Validators.compose([Validators.required])],//
+			'middle_name'	: [null, Validators.compose([Validators.required])],//
+			'last_name'		: [null, Validators.compose([Validators.required])],//
+			'street'		: [null, Validators.compose([Validators.required])],//
+			'barangay'		: [null, Validators.compose([Validators.required])],//
+			'city'			: [null, Validators.compose([Validators.required])],//
+			'phone'			: [null, Validators.compose([Validators.required])],//
+			'citizenship'	: [null, Validators.compose([Validators.required])],//
+			'religion'		: [null, Validators.compose([Validators.required])],//
+			'province'		: [null, Validators.compose([Validators.required])],//
+			'gender'		: [null, Validators.compose([Validators.required])],//
 			
 			// birth info
-			'birthday'		: [null, Validators.compose([Validators.required])],
-			'birthplace'	: [null, Validators.compose([Validators.required])],
-			'age'			: [null, Validators.compose([Validators.required])],
+			'birthday'		: [null, Validators.compose([Validators.required])],//
+			'birthplace'	: [null, Validators.compose([Validators.required])],//
+			'age'			: [null, Validators.compose([Validators.required])],//
 			
 			// career info
-			'civil_status'	: [null, Validators.compose([Validators.required])],
-			'occupation'	: [null, Validators.compose([Validators.required])],
-			'tin_number'	: [null, Validators.compose([Validators.required])],
-			'period_of_residence': [null],
-			'voters_id_number'	 : [null, Validators.compose([Validators.required])],
-			'precint_assignment_number'		: [null],
+			'civil_status'	: [null, Validators.compose([Validators.required])],//
+			'occupation'	: [null, Validators.compose([Validators.required])],//
+			'tin_number'	: [null, Validators.compose([Validators.required])],//
+			'period_of_residence': [null, Validators.compose([Validators.required])],//
+			'voters_id_number'	 : [null, Validators.compose([Validators.required])],//
+			'precint_assignment_number'		: [null],//
 			
 			// mother information
-			'mother_information_first_name'	: [null],
-			'mother_information_middle_name': [null],
-			'mother_information_last_name'	: [null],
+			'mother_information_first_name'	: [null],//
+			'mother_information_middle_name': [null],//
+			'mother_information_last_name'	: [null],//
 			
 			// father information
-			'father_information_first_name'	: [null],
-			'father_information_middle_name': [null],
-			'father_information_last_name'	: [null],
+			'father_information_first_name'	: [null],//
+			'father_information_middle_name': [null],//
+			'father_information_last_name'	: [null],//
 		});
 	}
 
