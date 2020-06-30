@@ -5,7 +5,6 @@ import { map, filter, switchMap, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { environment } from '../../../../environments/environment';
 
-
 @Injectable({
   	providedIn: 'root'
 })

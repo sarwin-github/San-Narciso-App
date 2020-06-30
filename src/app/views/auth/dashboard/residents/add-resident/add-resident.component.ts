@@ -4,13 +4,16 @@ import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { mainAnimations } from '../../../../../shared/animations/main-animations';
 import { Subscription, Subject, Observable } from 'rxjs';
-import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
+import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam';
+import { ResidentService } from '../../../../../shared/services/resident/resident.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
 	selector: 'app-add-resident',
 	animations: [mainAnimations],
 	templateUrl: './add-resident.component.html',
-	styleUrls: ['./add-resident.component.scss']
+	styleUrls: ['./add-resident.component.scss'],
+	providers: [MessageService]
 })
 export class AddResidentComponent implements OnInit {
 	private req: Subscription;
@@ -21,6 +24,8 @@ export class AddResidentComponent implements OnInit {
 
 	constructor(private router:Router, 
 		private activatedRoute: ActivatedRoute,
+		private residentService: ResidentService,
+		private messageService: MessageService,
 		private formBuilder: FormBuilder,) { }
 
 	createForm(){
@@ -77,6 +82,53 @@ export class AddResidentComponent implements OnInit {
 		localStorage.removeItem('residentInfoMessage');
 
 		if(this.req) this.req.unsubscribe();
+	}
+
+
+	createNewResident(){
+		let body  = {
+			'email' : this.residentForm.get('email').value,
+
+			'first_name' : this.residentForm.get('first_name').value,
+			'middle_name' : this.residentForm.get('middle_name').value,
+			'last_name' : this.residentForm.get('last_name').value,
+			'street' : this.residentForm.get('street').value,
+			'barangay' : this.residentForm.get('barangay').value,
+			'city' : this.residentForm.get('city').value,
+			'phone' : this.residentForm.get('phone').value,
+			'citizenship' : this.residentForm.get('citizenship').value,
+			'religion' : this.residentForm.get('religion').value,
+			'province' : this.residentForm.get('province').value,
+			'gender' : this.residentForm.get('gender').value,
+			'birthday' : this.residentForm.get('birthday').value,
+			'birthplace' : this.residentForm.get('birthplace').value,
+			'age' : this.residentForm.get('age').value,
+			'civil_status' : this.residentForm.get('civil_status').value,
+			'occupation' : this.residentForm.get('occupation').value,
+			'tin_number' : this.residentForm.get('tin_number').value,
+			'period_of_residence' : this.residentForm.get('period_of_residence').value,
+			'voters_id_number' : this.residentForm.get('voters_id_number').value,
+			'precint_assignment_number' : this.residentForm.get('precint_assignment_number').value,
+			
+			'mother_information_first_name' : this.residentForm.get('mother_information_first_name').value,
+			'mother_information_middle_name' : this.residentForm.get('mother_information_middle_name').value,
+			'mother_information_last_name' : this.residentForm.get('mother_information_last_name').value,
+			
+			'father_information_first_name' : this.residentForm.get('father_information_first_name').value,
+			'father_information_middle_name' : this.residentForm.get('father_information_middle_name').value,
+			'father_information_last_name' : this.residentForm.get('father_information_last_name').value,
+		};
+
+		console.log(body)
+
+		this.req = this.residentService.addNewResident(body)
+		.subscribe((result) => {
+			console.log(result)
+			/*if(result) this.toaster.success(result.message);*/
+		}, err => {
+			this.messageService.add({severity:'error', summary:'Error Message', detail: JSON.parse(err._body).message, life: 5000 });
+			console.log(JSON.parse(err._body))
+		})
 	}
 
 

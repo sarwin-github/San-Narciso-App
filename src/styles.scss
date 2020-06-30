@@ -247,3 +247,20 @@ a:hover{
 .input-border{
   border: solid 2px gray !important;
 }
+
+// hide picklist button
+.ui-picklist-source-controls, .ui-picklist-target-controls{
+    display:none !important;
+    width: 10px !important;
+    position: absolute !important;
+} 
+
+
+.ui-state-highlight{
+  background: #375A7F !important;
+}
+
+.ui-button{
+  background: #253C54 !important;
+}
+

@@ -7,7 +7,7 @@
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
-			<div class="modal-body">
+			<div class="modal-body text-center">
 				<div style="text-align:center">
 					<div>
 						<webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
@@ -21,13 +21,10 @@
 						<button class="actionBtn" (click)="triggerSnapshot();">Take A Snapshot</button>
 						<button class="actionBtn" (click)="toggleWebcam();">Toggle Webcam</button>
 						<br/>
-						<button class="actionBtn" (click)="showNextWebcam(true);" [disabled]="!multipleWebcamsAvailable">Next Webcam</button>
-						<input id="cameraSwitchCheckbox" type="checkbox" [(ngModel)]="allowCameraSwitch"><label for="cameraSwitchCheckbox">Allow Camera Switch</label>
-						<br/>
 					</div>
 				</div>
 
-				<div class="snapshot" *ngIf="webcamImage">
+				<div class="snapshot mt-3" *ngIf="webcamImage">
 					<img [src]="webcamImage.imageAsDataUrl"/>
 				</div>
 			</div>
@@ -63,7 +60,12 @@
 							
 							<div class="row">
 								<div class="col-12 col-sm-12 col-md-2 text-center">
-									<img class="img img-fluid" width="100%" src="/assets/images/face-1.jpg" alt="">
+									<img class="img img-fluid side-image" *ngIf="!webcamImage"
+									 width="100%" src="/assets/images/face-1.jpg" alt="">
+									<div class="snapshot mt-3" *ngIf="webcamImage">
+										<img class="img img-fluid side-image" [src]="webcamImage.imageAsDataUrl"/>
+									</div>
+
 									<button class="btn bg-dark-blue px-3 mt-2" 
 									data-toggle="modal" data-target="#exampleModal">
 										
@@ -72,7 +74,7 @@
 								</div>
 
 								<div class="col-12 col-sm-12 col-md-10 mb-3 pr-lg-4">
-									<form [formGroup]="residentForm">
+									<form [formGroup]="residentForm" (submit)="createNewResident()">
 										<!-- Error Message -->
 										<div class="alert alert-danger alert-dismissible fade show error-message" [@animate]="{value:'*', params:{ y:'50px', delay:'600ms' }}" *ngIf="error" role="alert">
 											<a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="onAlertClose()">&times;</a>
@@ -93,14 +95,14 @@
 												</span>
 											</div>
 											<div class="form-group col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="Middle Name" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="Middle Name" formControlName="middle_name" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">Middle Name</span>
 												</span>
 											</div>
 
 											<div class="form-group col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="Last Name" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="Last Name" formControlName="last_name" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">Last Name</span>
 												</span>
@@ -110,21 +112,21 @@
 										<br>
 										<div class="row">
 											<div class=" col-12 col-sm-12 col-md-4">
-												<input type="date" class="form-control py-4" placeholder="Birthday" formControlName="first_name" required>
+												<input type="date" class="form-control py-4" placeholder="Birthday" formControlName="birthday" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">Birthday</span>
 												</span>
 											</div>
 
 											<div class="form-group col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="Birth Place" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="Birth Place" formControlName="birthplace" required>
 												<span class="floating-label">
-													<span class="floating-label-bg">Middle Name</span>
+													<span class="floating-label-bg">Birth Place</span>
 												</span>
 											</div>
 
 											<div class="form-group col-12 col-sm-12 col-md-2">
-												<input type="number" class="form-control py-4" placeholder="Age" formControlName="first_name" required>
+												<input type="number" class="form-control py-4" placeholder="Age" formControlName="age" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">Age</span>
 												</span>
@@ -146,21 +148,21 @@
 										<br>
 										<div class="row">
 											<div class="form-group col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="Period of Residence" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="Period of Residence" formControlName="period_of_residence" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">Period of Residence</span>
 												</span>
 											</div>
 
 											<div class="form-group col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="Occupation" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="Occupation" formControlName="occupation" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">Occupation</span>
 												</span>
 											</div>
 
 											<div class="form-group col-12 col-sm-12 col-md-2">
-												<input type="text" class="form-control py-4" placeholder="Religion" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="Religion" formControlName="religion" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">Religion</span>
 												</span>
@@ -186,14 +188,14 @@
 										<h5 class="text-white p-2 mb-3 bg-dark-blue">Address</h5>
 										<div class="row">
 											<div class="form-group col-12 col-sm-12 col-md-8">
-												<input type="text" class="form-control py-4" placeholder="Street" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="Street" formControlName="street" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">Street</span>
 												</span>
 											</div>
 
 											<div class="form-group col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="Barangay" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="Barangay" formControlName="barangay" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">Barangay</span>
 												</span>
@@ -202,21 +204,21 @@
 										<br>
 										<div class="row">
 											<div class="form-group col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="City" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="City" formControlName="city" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">City</span>
 												</span>
 											</div>
 
 											<div class="form-group col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="Province" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="Province" formControlName="province" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">Province</span>
 												</span>
 											</div>
 
 											<div class="form-group col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="Citizenship" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="Citizenship" formControlName="citizenship" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">Citizenship</span>
 												</span>
@@ -228,14 +230,14 @@
 
 										<div class="row">
 											<div class="form-group col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="Contact Email" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="Contact Email" formControlName="email" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">Contact Email</span>
 												</span>
 											</div>
 
 											<div class="form-group col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="Phone Number" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="Phone Number" formControlName="phone" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">Phone Number</span>
 												</span>
@@ -245,21 +247,21 @@
 										<br>
 										<div class="row">
 											<div class="form-group col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="Tin Number" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="Tin Number" formControlName="tin_number" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">Tin Number</span>
 												</span>
 											</div>
 
 											<div class="form-group col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="Voters Id Number" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="Voters Id Number" formControlName="voters_id_number" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">Voters Id Number</span>
 												</span>
 											</div>
 
 											<div class="form-group col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="Precint Assignment Number" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="Precint Assignment Number" formControlName="precint_assignment_number" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">Precint Assignment Number</span>
 												</span>
@@ -271,21 +273,21 @@
 
 										<div class="row">
 											<div class=" col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="First Name" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="First Name" formControlName="mother_information_first_name" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">First Name</span>
 												</span>
 											</div>
 
 											<div class="form-group col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="Middle Name" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="Middle Name" formControlName="mother_information_middle_name" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">Middle Name</span>
 												</span>
 											</div>
 
 											<div class="form-group col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="Last Name" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="Last Name" formControlName="mother_information_last_name" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">Last Name</span>
 												</span>
@@ -298,21 +300,21 @@
 
 										<div class="row">
 											<div class=" col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="First Name" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="First Name" formControlName="father_information_first_name" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">First Name</span>
 												</span>
 											</div>
 
 											<div class="form-group col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="Middle Name" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="Middle Name" formControlName="father_information_middle_name" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">Middle Name</span>
 												</span>
 											</div>
 
 											<div class="form-group col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="Last Name" formControlName="first_name" required>
+												<input type="text" class="form-control py-4" placeholder="Last Name" formControlName="father_information_last_name" required>
 												<span class="floating-label">
 													<span class="floating-label-bg">Last Name</span>
 												</span>
@@ -330,3 +332,5 @@
 		</div>
 	</div>
 </div>
+
+<p-toast position="bottom-center"></p-toast>

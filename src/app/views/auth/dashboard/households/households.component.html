@@ -4,44 +4,70 @@
 			<div >
 				<div class="card bg-white container-shadow px-4 ml-3">
 					<div class="card-header text-uppercase py-4 bg-dark-blue px-5" style="position: absolute !important; top: -30px !important;">
-						<span style="font-size: 18px !important;">Community Dashboard</span>
+						<span style="font-size: 18px !important;">RESIDENT HOUSEHOLDS</span>
 					</div>
 					<div class="card-body bg-white pt-5">
-						<div class="px-1 pt-4">
+						<div class="text-right">
+							<button class="btn bg-dark-blue px-3" routerLink="/community/households/add">
+								Add Households
+								<i class="ml-2 fa fa-plus"></i>
+							</button>
+						</div>
+						<div class="px-1">
 							<hr>
 							<div class="text-justify text-dark">
 								<p>Lorem ipsum dolor sit amet, veri modus conceptam mel cu, has in dictas discere qualisque, saperet ullamcorper ad eum. </p>
 							</div>
-							<hr>
+							<br>
 							
 							<div class="row">
-								<div class="col-12 col-md-6 mb-3 pr-lg-4">
-									<img src="/assets/images/graph-1.svg" class="img img-fluid" width="100%">
+								<div class="col-12  mb-3 pr-lg-4">
+									<table class="table text-dark" style="min-height: 400px">
+										<thead>
+											<tr>
+												<th scope="col">Household ID</th>
+												<th scope="col">Family Name</th>
+												<th scope="col">Primary Phone</th>
+												<th scope="col">Email</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th scope="row">1001</th>
+												<td>Otto</td>
+												<td>(041)-797-1532</td>
+												<td>mark_otto@mdo</td>
+												<td>
+													<span class="fa fa-cog mr-2"></span>
+													<span class="pt-0">Action</span>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">1002</th>
+												<td>Thornton</td>
+												<td>(041) 797 7523</td>
+												<td>jacob_thorton@fat</td>
+												<td>
+													<span class="fa fa-cog mr-2"></span>
+													<span class="pt-0">Action</span>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">1003</th>
+												<td>Jameson</td>
+												<td>(041)-797-2214</td>
+												<td>larry_bird@twitter</td>
+												<td>
+													<span class="fa fa-cog mr-2"></span>
+													<span class="pt-0">Action</span>
+												</td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
-								<div class="col-12 col-md-6 mb-3 bg-whitesmoke">
-									<img src="/assets/images/graph-2.svg" class="img img-fluid" width="100%">
-								</div>
+								
 							</div>
-
-							<hr>
-
-							<div class="text-justify text-dark">
-								<p>Lorem ipsum dolor sit amet, veri modus conceptam mel cu, has in dictas discere qualisque, saperet ullamcorper ad eum. </p>
-							</div>
-							<hr>
-
-							<div class="row">
-								<div class="col-12 col-md-4 mb-3">
-									<img src="/assets/images/graph-1.svg" class="img img-fluid" width="100%">
-								</div>
-								<div class="col-12 col-md-4 mb-3">
-									<img src="/assets/images/graph-1.svg" class="img img-fluid" width="100%">
-								</div>
-								<div class="col-12 col-md-4 mb-3">
-									<img src="/assets/images/graph-1.svg" class="img img-fluid" width="100%">
-								</div>
-							</div>
-							
 						</div>
 					</div>
 				</div>

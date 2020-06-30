@@ -6,6 +6,8 @@ import { ResidentsComponent } from './residents/residents.component';
 import { HouseholdsComponent } from './households/households.component';
 import { AddResidentComponent } from './residents/add-resident/add-resident.component';
 import { EditResidentComponent } from './residents/edit-resident/edit-resident.component';
+import { AddHouseholdComponent } from './households/add-household/add-household.component';
+import { EditHouseholdComponent } from './households/edit-household/edit-household.component';
 
 export const DashboardRoutes: Routes = [
 	{ 
@@ -40,6 +42,18 @@ export const DashboardRoutes: Routes = [
 				path: 'households',
 				component: HouseholdsComponent,
 				canActivate: [UserGuard]
+			},
+
+			{
+				path: 'households/add',
+				component: AddHouseholdComponent,
+				canActivate: [UserGuard],
+			},
+
+			{
+				path: 'households/edit/:id',
+				component: EditHouseholdComponent,
+				canActivate: [UserGuard],
 			},
 		]
 	}
