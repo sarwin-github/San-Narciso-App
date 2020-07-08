@@ -1,0 +1,13 @@
+.fa{
+	cursor: pointer;
+	color: whitesmoke;
+}
+
+td{
+	span{
+		&.fa{
+			cursor: pointer;
+			color: #868686 !important;
+		}
+	}
+}

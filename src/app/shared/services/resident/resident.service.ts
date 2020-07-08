@@ -9,7 +9,6 @@ import { environment } from '../../../../environments/environment';
 	providedIn: 'root'
 })
 export class ResidentService {
-	private isUserLoggedIn: any;
 	private server = environment.server;
 
 	private selectedResident = new BehaviorSubject<any>(null || localStorage.getItem('userLogin'));

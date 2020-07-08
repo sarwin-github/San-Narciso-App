@@ -4,10 +4,16 @@ import { ContainerHolderComponent } from './container-holder.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ResidentsComponent } from './residents/residents.component';
 import { HouseholdsComponent } from './households/households.component';
+import { BlottersComponent } from './blotters/blotters.component';
+
 import { AddResidentComponent } from './residents/add-resident/add-resident.component';
 import { EditResidentComponent } from './residents/edit-resident/edit-resident.component';
+
 import { AddHouseholdComponent } from './households/add-household/add-household.component';
 import { EditHouseholdComponent } from './households/edit-household/edit-household.component';
+
+import { AddBlotterComponent } from './blotters/add-blotter/add-blotter.component';
+import { EditBlotterComponent } from './blotters/edit-blotter/edit-blotter.component';
 
 export const DashboardRoutes: Routes = [
 	{ 
@@ -53,6 +59,24 @@ export const DashboardRoutes: Routes = [
 			{
 				path: 'households/edit/:id',
 				component: EditHouseholdComponent,
+				canActivate: [UserGuard],
+			},
+
+			{
+				path: 'blotters',
+				component: BlottersComponent,
+				canActivate: [UserGuard]
+			},
+
+			{
+				path: 'blotters/add',
+				component: AddBlotterComponent,
+				canActivate: [UserGuard],
+			},
+
+			{
+				path: 'blotters/edit/:id',
+				component: EditBlotterComponent,
 				canActivate: [UserGuard],
 			},
 		]

@@ -1,0 +1,109 @@
+<div class="container-fluid px-0 mb-5" [@animate]="{value:'*', params:{ scale:'.9', delay:'400ms' }}">
+	<div class="row">
+		<div class="col-12 col-sm-12 col-md-12 px-md-0 pt-md-5" style="position: relative !important;">
+			<div >
+				<div class="card bg-white container-shadow px-4 ml-3">
+					<div class="card-header text-uppercase py-4 bg-dark-blue px-5" style="position: absolute !important; top: -30px !important;">
+						<span style="font-size: 18px !important;">Add New Blotter</span>
+					</div>
+					<div class="card-body bg-white pt-5">
+						<div class="text-right">
+							<button class="btn bg-dark-blue px-3" routerLink="/community/households">
+								<i class="mr-2 fa fa-chevron-left"></i>
+								Back to List
+							</button>
+						</div>
+						<div class="px-1">
+							<hr>
+							<div class="text-justify text-dark">
+								<p>Lorem ipsum dolor sit amet, veri modus conceptam mel cu, has in dictas discere qualisque, saperet ullamcorper ad eum. </p>
+							</div>
+							<hr>
+							
+							<div class="row">
+								<form [formGroup]="householdForm" (submit)="createNewHousehold()" 
+								class="col-12 col-sm-12 col-md-6 mb-3 pr-lg-4">
+									<h5 class="text-white p-2 mb-3 bg-dark-blue">Blotter Information</h5>
+									<div class="row">
+										<div class=" col-12 col-sm-12 col-md-6">
+											<input type="date" class="form-control py-4" placeholder="Date of Filing" formControlName="household_head" required>
+											<span class="floating-label">
+												<span class="floating-label-bg">Date of Filing</span>
+											</span>
+										</div>
+										<div class="form-group col-12 col-sm-12 col-md-6">
+											<input type="text" class="form-control py-4" placeholder="Case Number" formControlName="household_name" required>
+											<span class="floating-label">
+												<span class="floating-label-bg">Case Number</span>
+											</span>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class=" col-12 col-sm-12 col-md-12">
+											<input type="text" class="form-control py-4" placeholder="Complainant" formControlName="household_head" required>
+											<span class="floating-label">
+												<span class="floating-label-bg">Complainant</span>
+											</span>
+										</div>
+									</div>
+
+									<div class="row mt-4">
+										<div class=" col-12 col-sm-12 col-md-12">
+											<input type="text" class="form-control py-4" placeholder="Complainaned Resident" formControlName="household_head" required>
+											<span class="floating-label">
+												<span class="floating-label-bg">Complainaned Resident</span>
+											</span>
+										</div>
+									</div>
+
+									<div class="row mt-4">
+										<div class=" col-12 col-sm-12 col-md-12">
+											<input type="text" class="form-control py-4" placeholder="Officer In Charge" formControlName="household_head" required>
+											<span class="floating-label">
+												<span class="floating-label-bg">Officer In Charge</span>
+											</span>
+										</div>
+									</div>
+
+									<h5 class="text-white p-2 my-3 bg-dark-blue">Description</h5>
+									<div class="form-group">
+									    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+									</div>
+
+									<button type="submit" class="btn bg-dark-blue float-right mt-4 px-5">Submit</button>
+								</form>
+
+								<div class="col-12 col-sm-12 col-md-6">
+									<h5 class="text-white p-2 mb-3 bg-dark-blue">Related Blotters to Complained Resident</h5>
+									<div class="col-12  mb-3 pr-lg-4">
+										<table class="table text-dark" style="min-height: 400px">
+											<thead>
+												<tr>
+													<th scope="col">Case Number</th>
+													<th scope="col">Complainant</th>
+													<th scope="col">Complained Resident</th>
+													<th scope="col">Officer In Charge</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th scope="row">1001</th>
+													<td>Mark Otto</td>
+													<td>James Machovich</td>
+													<td>Mark Millan</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<p-toast position="bottom-center"></p-toast>

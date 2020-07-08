@@ -9,7 +9,7 @@
 					<div class="card-body bg-white  pt-5">
 						<form class="px-3" (submit)="loginUser($event)" [formGroup]="userLoginForm">
 							<!-- Error Message -->
-							<div class="alert alert-danger alert-dismissible fade show error-message" [@animate]="{value:'*', params:{ y:'50px', delay:'600ms' }}" *ngIf="error" role="alert">
+							<div class="alert alert-danger alert-dismissible fade show error-message mt-3" [@animate]="{value:'*', params:{ y:'50px', delay:'600ms' }}" *ngIf="error" role="alert">
 							  	<a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="onAlertClose()">&times;</a>
 							  	<span [innerHtml]="error"></span>
 							</div>  

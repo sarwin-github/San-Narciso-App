@@ -18,6 +18,9 @@ import { EditHouseholdComponent } from './households/edit-household/edit-househo
 import { WebcamModule } from 'ngx-webcam';
 import { PickListModule } from 'primeng/picklist';
 import { ToastModule } from 'primeng/toast';
+import { BlottersComponent } from './blotters/blotters.component';
+import { AddBlotterComponent } from './blotters/add-blotter/add-blotter.component';
+import { EditBlotterComponent } from './blotters/edit-blotter/edit-blotter.component';
 
 @NgModule({
 	imports: [
@@ -38,7 +41,10 @@ import { ToastModule } from 'primeng/toast';
 		AddResidentComponent,
 		EditResidentComponent,
 		AddHouseholdComponent,
-		EditHouseholdComponent
+		EditHouseholdComponent,
+		BlottersComponent,
+		AddBlotterComponent,
+		EditBlotterComponent
 	]
 })
 export class DashboardModule { }

@@ -54,9 +54,9 @@
       </div>
     </a>
 
-    <a 
-    [ngClass]="!open && location.match('/community/citizen') ? 'router-link-active' : 
-    open && location.match('/community/citizen') ? 'router-link-active-parent pl-3': ''"
+    <a routerLink="/community/blotters"
+    [ngClass]="!open && location.match('/community/blotters') ? 'router-link-active' : 
+    open && location.match('/community/blotters') ? 'router-link-active-parent pl-3': ''"
     class="list-group-item flex-column align-items-start py-3">
       <div class="d-flex w-100 justify-content-start align-items-center">
         <span class="material-icons">remove_from_queue </span>
