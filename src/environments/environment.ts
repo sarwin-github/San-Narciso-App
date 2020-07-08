@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  server: 'http://localhost:6060'
+  //server: 'http://localhost:6060',
+  server: 'http://api-brgy-e-portal.herokuapp.com'
 };
 
 /*
