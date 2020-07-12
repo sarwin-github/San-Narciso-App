@@ -57,7 +57,11 @@ export class SigninComponent implements OnInit {
 	  	};
 
 	  	this.spinner.show();
-
+	  	setTimeout(() => {
+	  		this.spinner.hide();
+	  		if(!this.message)
+	  			this.error = "There have been an error while connecting with the server";
+	  	}, 5000)
 		// execute http post request
 		this.postReq = this.UsersService
 		.postLogin(JSON.stringify(body))
@@ -93,11 +97,10 @@ export class SigninComponent implements OnInit {
     	    	this.spinner.hide();
     			this.router.navigate(['/community/dashboard']);
 	  		}
-
-
 	  	},
 	  	// If error in server/api temporary navigate to error page
 		(err) => {
+			setTimeout(() => this.spinner.hide(), 3000)
 			localStorage.setItem('sessionError', err);
 			localStorage.setItem('sessionUrl', this.router.url);
 			console.log(err)
