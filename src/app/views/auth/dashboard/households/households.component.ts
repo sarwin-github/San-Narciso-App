@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { mainAnimations } from '../../../../shared/animations/main-animations';
 import { HouseholdService } from '../../../../shared/services/household/household.service';
 import { Subscription } from 'rxjs';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
 	selector: 'app-households',
@@ -13,10 +14,21 @@ export class HouseholdsComponent implements OnInit {
 	private req: Subscription;
 	public households;
 
-	constructor(private householdService: HouseholdService) { }
+	constructor(
+		private spinner: NgxSpinnerService,
+		private householdService: HouseholdService) { }
 
 	ngOnInit(): void {
-		this.req = this.householdService.getListOfHouseholds().subscribe(result => console.log(result));
+		window.scrollTo({ top: 0, behavior: 'smooth'});
+		this.spinner.show();
+		this.req = this.householdService.getListOfHouseholds()
+		.subscribe(result => {
+			console.log(result)
+			setTimeout(() => {
+				this.spinner.hide();
+				this.households = result.households;
+			}, 4000);
+		});
 	}
 
 	ngOnDestroy(): void{

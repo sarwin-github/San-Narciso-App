@@ -20,7 +20,7 @@
     </a>
 
     <!-- DASHBOARD SECTION -->
-    <a routerLink="/community/dashboard"
+    <a (click)="closeSidebar('/community/dashboard')"
     [ngClass]="!open && location.match('/community/dashboard') ? 'router-link-active' : 
     open && location.match('/community/dashboard') ? 'router-link-active-parent pl-3': ''"
     class="list-group-item flex-column align-items-start py-3">
@@ -32,7 +32,7 @@
       </div>
     </a>
     
-    <a routerLink="/community/residents"
+    <a (click)="closeSidebar('/community/residents')"
     [ngClass]="!open && location.match('/community/residents') ? 'router-link-active' : 
     open && location.match('/community/residents') ? 'router-link-active-parent pl-3': ''"
     class="list-group-item flex-column align-items-start py-3">
@@ -43,7 +43,7 @@
       </div>
     </a>
 
-    <a routerLink="/community/households"
+    <a (click)="closeSidebar('/community/households')"
     [ngClass]="!open && location.match('/community/households') ? 'router-link-active' : 
     open && location.match('/community/households') ? 'router-link-active-parent pl-3': ''"
     class="list-group-item flex-column align-items-start py-3">
@@ -54,7 +54,7 @@
       </div>
     </a>
 
-    <a routerLink="/community/blotters"
+    <a (click)="closeSidebar('/community/blotters')"
     [ngClass]="!open && location.match('/community/blotters') ? 'router-link-active' : 
     open && location.match('/community/blotters') ? 'router-link-active-parent pl-3': ''"
     class="list-group-item flex-column align-items-start py-3">

@@ -21,6 +21,8 @@ import { ToastModule } from 'primeng/toast';
 import { BlottersComponent } from './blotters/blotters.component';
 import { AddBlotterComponent } from './blotters/add-blotter/add-blotter.component';
 import { EditBlotterComponent } from './blotters/edit-blotter/edit-blotter.component';
+import { SharedPipeModule } from '../../../shared/shared-pipe.module';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
 	imports: [
@@ -30,6 +32,8 @@ import { EditBlotterComponent } from './blotters/edit-blotter/edit-blotter.compo
 		WebcamModule,
 		PickListModule,
 		ToastModule,
+		SharedPipeModule,
+		NgxSpinnerModule,
 		RouterModule.forChild(DashboardRoutes)
 	],
 	declarations: [

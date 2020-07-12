@@ -9,12 +9,14 @@ import { CustomRequestOptions } from './shared/services/set-auth-header';
 import { RouterModule } from '@angular/router';
 import { rootRouterConfig } from './app.routing';
 
+
 @NgModule({
     declarations: [
       AppComponent,
     ],
     imports: [
         SharedModule,
+       
         RouterModule.forRoot(rootRouterConfig, { useHash: false })
     ],
     providers: [UserGuard, { provide: RequestOptions, useClass: CustomRequestOptions }],

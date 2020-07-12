@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
 	private req: Subscription;
+	
 	loggedInUser: any;
 
   	constructor(private router:Router, 

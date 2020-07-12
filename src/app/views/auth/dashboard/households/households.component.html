@@ -1,4 +1,4 @@
-<div class="container-fluid px-0 mb-5" [@animate]="{value:'*', params:{ scale:'.9', delay:'400ms' }}">
+<div class="container-fluid px-0 mb-5">
 	<div class="row">
 		<div class="col-12 col-sm-12 col-md-12 px-md-0 pt-md-5" style="position: relative !important;">
 			<div >
@@ -6,7 +6,7 @@
 					<div class="card-header text-uppercase py-4 bg-dark-blue px-5" style="position: absolute !important; top: -30px !important;">
 						<span style="font-size: 18px !important;">RESIDENT HOUSEHOLDS</span>
 					</div>
-					<div class="card-body bg-white pt-5">
+					<div class="card-body bg-white pt-5" style="min-height: 600px">
 						<div class="text-right">
 							<button class="btn bg-dark-blue px-3" routerLink="/community/households/add">
 								Add Households
@@ -41,7 +41,7 @@
 												<th></th>
 											</tr>
 										</thead>
-										<tbody>
+										<tbody *ngIf="households?.length > 0">
 											<tr>
 												<th scope="row">1001</th>
 												<td>Otto</td>

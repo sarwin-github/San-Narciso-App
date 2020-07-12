@@ -10,7 +10,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 const classesToInclude = [
   HeaderComponent,
-  
 ]
 
 @NgModule({
@@ -22,7 +21,8 @@ const classesToInclude = [
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   entryComponents: [],
   providers: [],
