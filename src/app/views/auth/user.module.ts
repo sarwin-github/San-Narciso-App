@@ -8,12 +8,14 @@ import { SignupComponent } from './users/signup/signup.component';
 import { ProfileComponent } from './users/profile/profile.component';
 import { UserRoutes } from './user.routing';
 import { environment } from '../../../environments/environment';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule, 
     ReactiveFormsModule,
+    NgxSpinnerModule,
     RouterModule.forChild(UserRoutes)
   ],
   declarations: [

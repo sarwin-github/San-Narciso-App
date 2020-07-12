@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from '../../../../shared/services/auth/users.service'
 import { mainAnimations } from '../../../../shared/animations/main-animations';
 import { Subscription } from 'rxjs';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-signin',
@@ -25,6 +26,7 @@ export class SigninComponent implements OnInit {
 
   	constructor(private router:Router, 
 		private activatedRoute: ActivatedRoute,
+		private spinner: NgxSpinnerService,
 		private formBuilder: FormBuilder,
 		private UsersService: UsersService) { }
 
@@ -54,6 +56,8 @@ export class SigninComponent implements OnInit {
 	  		'password' : this.user_password,
 	  	};
 
+	  	this.spinner.show();
+
 		// execute http post request
 		this.postReq = this.UsersService
 		.postLogin(JSON.stringify(body))
@@ -67,6 +71,8 @@ export class SigninComponent implements OnInit {
 
 	  			this.error = localStorage.getItem('loginError');
 	  			this.error = this.error.split(',').join('<br>');
+	  			this.spinner.hide()
+
   			    return this.router.navigate(['/user/signin']);
 	  		} 
 	  		// if no error, execute login validation
@@ -84,8 +90,11 @@ export class SigninComponent implements OnInit {
 	  			this.userLoginForm.reset();
 	  			this.message = localStorage.getItem('loginMessage');
     	    	this.UsersService.setUserLogin(true);
+    	    	this.spinner.hide();
     			this.router.navigate(['/community/dashboard']);
 	  		}
+
+
 	  	},
 	  	// If error in server/api temporary navigate to error page
 		(err) => {
