@@ -77,17 +77,8 @@ export class SidebarComponent implements OnInit {
 
 	closeSidebar(link){
 		this.router.navigate([link]);
-		setTimeout(() => {
-			this.open = false;
-			this.sidebar.dashboardSidebar.next(this.open);
-			this.linksDisplayedDatasets = false;
-			this.linksDisplayedAccountSettings = false;
-			this.linksDisplayPlanningSection = false;
-			this.linksDisplayDashboard = false;
-
-			if(this.open) sessionStorage.setItem('sidebarState', this.open);
-			else sessionStorage.removeItem('sidebarState');
-		}, 300)
+		this.sidebar.dashboardSidebar.next(false);
+		sessionStorage.removeItem('sidebarState');
 	}
 
 	displayDropdown(item){

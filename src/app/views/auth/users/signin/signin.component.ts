@@ -59,7 +59,7 @@ export class SigninComponent implements OnInit {
 	  	this.spinner.show();
 	  	setTimeout(() => {
 	  		this.spinner.hide();
-	  		if(!this.message)
+	  		if(!this.message || !this.error)
 	  			this.error = "There have been an error while connecting with the server";
 	  	}, 5000)
 		// execute http post request
