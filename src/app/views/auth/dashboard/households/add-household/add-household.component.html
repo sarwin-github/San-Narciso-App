@@ -44,7 +44,16 @@
 										<h5 class="text-white p-2 mb-3 bg-dark-blue">Household Information</h5>
 										<div class="row">
 											<div class=" col-12 col-sm-12 col-md-4">
-												<input type="text" class="form-control py-4" placeholder="Head of the family" formControlName="household_head" required>
+												<!-- <input type="text" class="form-control py-4" placeholder="Head of the family" formControlName="household_head" required>
+												 -->
+
+												<select class="form-control text-dark pr-3" 
+												style="height:50px !important;"
+													formControlName="household_head" required>
+													<option *ngFor="let resident of residents" [value]="resident?._id">{{resident?.last_name}}, {{resident?.first_name}} 
+													</option>
+												</select>
+
 												<span class="floating-label">
 													<span class="floating-label-bg">Head of the family</span>
 												</span>
@@ -109,10 +118,10 @@
 											targetFilterPlaceholder="Search by Last Name" 
 											[sourceStyle]="{'height':'300px'}" 
 											[targetStyle]="{'height':'300px'}">
-											    <ng-template let-car pTemplate="item">
+											    <ng-template let-resident pTemplate="item">
 											        <div class="ui-helper-clearfix">
 											            <img src="assets/images/face-1.jpg" style="display:inline-block;margin:2px 0 2px 2px" width="48">
-											            <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{car.color}}, {{car.brand}} </div>
+											            <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{resident.last_name}}, {{resident.first_name}} </div>
 											        </div>
 											    </ng-template>
 											</p-pickList>

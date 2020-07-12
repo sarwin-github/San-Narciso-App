@@ -84,7 +84,7 @@ export class SigninComponent implements OnInit {
 	  			this.userLoginForm.reset();
 	  			this.message = localStorage.getItem('loginMessage');
     	    	this.UsersService.setUserLogin(true);
-    			this.router.navigate(['/user/profile']);
+    			this.router.navigate(['/community/dashboard']);
 	  		}
 	  	},
 	  	// If error in server/api temporary navigate to error page

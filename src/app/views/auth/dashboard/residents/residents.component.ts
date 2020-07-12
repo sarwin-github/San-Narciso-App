@@ -11,11 +11,16 @@ import { Subscription } from 'rxjs';
 })
 export class ResidentsComponent implements OnInit, OnDestroy {
 	private req: Subscription;
+	public residents: any;
 
 	constructor(private residentService: ResidentService) { }
 
 	ngOnInit(): void {
-		this.req = this.residentService.getListOfResidents().subscribe(result => console.log(result));
+		this.req = this.residentService.getListOfResidents()
+		.subscribe(result => {
+			console.log(result)
+			this.residents = result.residents;
+		});
 	}
 
 	ngOnDestroy(): void{

@@ -10,8 +10,8 @@ import { Subscription } from 'rxjs';
 	styleUrls: ['./households.component.scss']
 })
 export class HouseholdsComponent implements OnInit {
-
 	private req: Subscription;
+	public households;
 
 	constructor(private householdService: HouseholdService) { }
 

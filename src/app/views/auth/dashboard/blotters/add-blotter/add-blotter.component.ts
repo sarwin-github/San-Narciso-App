@@ -8,6 +8,7 @@ import { HouseholdService } from '../../../../../shared/services/household/house
 import { Car } from '../../../../../shared/domain/car';
 import { CarService } from '../../../../../shared/services/car/car.service';
 import { MessageService } from 'primeng/api';
+import { ResidentService } from '../../../../../shared/services/resident/resident.service';
 
 @Component({
 	selector: 'app-add-blotter',
@@ -17,28 +18,33 @@ import { MessageService } from 'primeng/api';
 	providers: [MessageService]
 })
 export class AddBlotterComponent implements OnInit {
-
+	private residentReq: Subscription;
 	private req: Subscription;
 
-	householdForm : FormGroup;
-	message        : string;
-	error          : string;
+	public residents : any;
+	public blotterForm : FormGroup;
+	public message : string;
+	public error   : string;
 
-	sourceInhabitant: Car[];  
-	currentInhabitant: Car[];
 
 	constructor(private router:Router, 
 		private activatedRoute: ActivatedRoute,
-		private carService: CarService,
+		private residentService: ResidentService,
 		private householdService: HouseholdService,
 		private messageService: MessageService,
 		private formBuilder: FormBuilder,) { }
 
 	createForm(){
-		this.householdForm = this.formBuilder.group({
+		this.residentReq = this.residentService.getListOfResidents()
+		.subscribe(result => {
+			console.log(result)
+			this.residents = result.residents;
+		});
+
+		this.blotterForm = this.formBuilder.group({
 			'household_head' : [null, Validators.compose([Validators.required])],//
 			'household_name' : [null, Validators.compose([Validators.required])],//
-			'household_number'		: [null, Validators.compose([Validators.required])],//
+			'household_number': [123885, Validators.compose([Validators.required])],//
 			'street'		: [null, Validators.compose([Validators.required])],//
 			'barangay'		: [null, Validators.compose([Validators.required])],//
 			'city'			: [null, Validators.compose([Validators.required])],//
@@ -49,13 +55,13 @@ export class AddBlotterComponent implements OnInit {
 
 	createNewHousehold(){
 		let body  = {
-			'household_head' : this.householdForm.get('household_head').value,
-			'household_name' : this.householdForm.get('household_name').value,
-			'household_number' : this.householdForm.get('household_number').value,
-			'street' : this.householdForm.get('street').value,
-			'barangay' : this.householdForm.get('barangay').value,
-			'city' : this.householdForm.get('city').value,
-			'province' : this.householdForm.get('province').value
+			'household_head' : this.blotterForm.get('household_head').value,
+			'household_name' : this.blotterForm.get('household_name').value,
+			'household_number' : this.blotterForm.get('household_number').value,
+			'street' : this.blotterForm.get('street').value,
+			'barangay' : this.blotterForm.get('barangay').value,
+			'city' : this.blotterForm.get('city').value,
+			'province' : this.blotterForm.get('province').value
 		};
 
 		this.req = this.householdService.addNewHousehold(body)
@@ -70,8 +76,6 @@ export class AddBlotterComponent implements OnInit {
 
 	public ngOnInit(): void {
 		this.createForm();
-		this.carService.getCarsSmall().then(cars => this.sourceInhabitant = cars);
-		this.currentInhabitant = [];
 	}
 
 	// Clear error message

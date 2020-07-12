@@ -8,6 +8,7 @@ import { HouseholdService } from '../../../../../shared/services/household/house
 import { Car } from '../../../../../shared/domain/car';
 import { CarService } from '../../../../../shared/services/car/car.service';
 import { MessageService } from 'primeng/api';
+import { ResidentService } from '../../../../../shared/services/resident/resident.service';
 
 @Component({
 	selector: 'app-add-household',
@@ -17,33 +18,41 @@ import { MessageService } from 'primeng/api';
 	providers: [MessageService]
 })
 export class AddHouseholdComponent implements OnInit {
-
 	private req: Subscription;
+	private residentReq: Subscription;
 
-	householdForm : FormGroup;
-	message        : string;
-	error          : string;
-
-	sourceInhabitant: Car[];  
-	currentInhabitant: Car[];
+	public householdForm : FormGroup;
+	public residents : any;
+	public message : string;
+	public error   : string;
+	public sourceInhabitant: Car[];  
+	public currentInhabitant: Car[];
 
 	constructor(private router:Router, 
 		private activatedRoute: ActivatedRoute,
 		private carService: CarService,
+		private residentService: ResidentService,
 		private householdService: HouseholdService,
 		private messageService: MessageService,
 		private formBuilder: FormBuilder,) { }
 
 	createForm(){
+		this.residentReq = this.residentService.getListOfResidents()
+		.subscribe(result => {
+			console.log(result)
+			this.residents = result.residents;
+			this.sourceInhabitant = result.residents;
+			this.currentInhabitant = [];
+		});
+
 		this.householdForm = this.formBuilder.group({
 			'household_head' : [null, Validators.compose([Validators.required])],//
 			'household_name' : [null, Validators.compose([Validators.required])],//
-			'household_number'		: [null, Validators.compose([Validators.required])],//
+			'household_number' : [null, Validators.compose([Validators.required])],//
 			'street'		: [null, Validators.compose([Validators.required])],//
 			'barangay'		: [null, Validators.compose([Validators.required])],//
 			'city'			: [null, Validators.compose([Validators.required])],//
 			'province'		: [null, Validators.compose([Validators.required])],//
-			
 		});
 	}
 
@@ -72,8 +81,8 @@ export class AddHouseholdComponent implements OnInit {
 
 	public ngOnInit(): void {
 		this.createForm();
-		this.carService.getCarsSmall().then(cars => this.sourceInhabitant = cars);
-		this.currentInhabitant = [];
+		/*this.carService.getCarsSmall().then(cars => this.sourceInhabitant = cars);
+		this.currentInhabitant = [];*/
 	}
 
 	// Clear error message

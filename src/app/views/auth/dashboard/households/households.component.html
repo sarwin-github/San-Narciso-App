@@ -16,6 +16,15 @@
 						<div class="px-1">
 							<hr>
 							<div class="text-justify text-dark">
+								<div class="float-right mr-2">
+									<div class="input-group">
+									  	<input type="text" class="form-control py-3" placeholder="Search">
+									  	<div class="input-group-append">
+									    	<span class="input-group-text bg-dark-blue fa fa-search"></span>
+									  	</div>
+									</div>
+								</div>
+								
 								<p>Lorem ipsum dolor sit amet, veri modus conceptam mel cu, has in dictas discere qualisque, saperet ullamcorper ad eum. </p>
 							</div>
 							<br>
@@ -59,8 +68,24 @@
 												<td>(041)-797-2214</td>
 												<td>larry_bird@twitter</td>
 												<td>
-													<span class="fa fa-cog mr-2"></span>
-													<span class="pt-0">Action</span>
+													<span id="dd" 
+													data-toggle="dropdown" class="action-td"
+													aria-haspopup="true" aria-expanded="false">
+														<span class="fa fa-cog mr-2"></span>
+														<span class="pt-0">Action</span>
+													</span>
+
+													<div class="dropdown-menu" aria-labelledby="dd">
+													    <a class="dropdown-item"> 
+													    	<span class="fa fa-eye mr-2"></span>View
+													    </a>
+													    <a class="dropdown-item">
+													    	<span class="fa fa-edit mr-2"></span>Edit
+													    </a>
+													    <a class="dropdown-item">
+													    	<span class="fa fa-trash mr-2"></span>Delete
+													    </a>
+													</div>
 												</td>
 											</tr>
 										</tbody>

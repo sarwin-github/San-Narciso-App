@@ -119,16 +119,19 @@ export class AddResidentComponent implements OnInit {
 			'father_information_last_name' : this.residentForm.get('father_information_last_name').value,
 		};
 
-		console.log(body)
+		console.log(body);
 
 		this.req = this.residentService.addNewResident(body)
 		.subscribe((result) => {
 			console.log(result)
-			/*if(result) this.toaster.success(result.message);*/
+			if(result) {
+				this.messageService.add({severity:'success', summary:'Successfully Added a New Resident', detail: result.message, life: 5000 });
+				this.router.navigate(['/community/residents']);
+			}
 		}, err => {
 			this.messageService.add({severity:'error', summary:'Error Message', detail: JSON.parse(err._body).message, life: 5000 });
 			console.log(JSON.parse(err._body))
-		})
+		});
 	}
 
 
