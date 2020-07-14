@@ -27,7 +27,7 @@ export class BlottersComponent implements OnInit {
 			setTimeout(() => {
 				this.spinner.hide();
 				this.blotters = result.households;
-			}, 4000);
+			}, 3000);
 		});
 	}
 

@@ -15,6 +15,9 @@ import { EditHouseholdComponent } from './households/edit-household/edit-househo
 import { AddBlotterComponent } from './blotters/add-blotter/add-blotter.component';
 import { EditBlotterComponent } from './blotters/edit-blotter/edit-blotter.component';
 
+import { BarangayClearanceComponent } from './barangay-clearance/barangay-clearance.component';
+
+
 export const DashboardRoutes: Routes = [
 	{ 
 		path: '', 
@@ -31,13 +34,11 @@ export const DashboardRoutes: Routes = [
 				component: ResidentsComponent,
 				canActivate: [UserGuard],
 			},
-
 			{
 				path: 'residents/add',
 				component: AddResidentComponent,
 				canActivate: [UserGuard],
 			},
-
 			{
 				path: 'residents/edit/:id',
 				component: EditResidentComponent,
@@ -49,13 +50,11 @@ export const DashboardRoutes: Routes = [
 				component: HouseholdsComponent,
 				canActivate: [UserGuard]
 			},
-
 			{
 				path: 'households/add',
 				component: AddHouseholdComponent,
 				canActivate: [UserGuard],
 			},
-
 			{
 				path: 'households/edit/:id',
 				component: EditHouseholdComponent,
@@ -67,17 +66,21 @@ export const DashboardRoutes: Routes = [
 				component: BlottersComponent,
 				canActivate: [UserGuard]
 			},
-
 			{
 				path: 'blotters/add',
 				component: AddBlotterComponent,
 				canActivate: [UserGuard],
 			},
-
 			{
 				path: 'blotters/edit/:id',
 				component: EditBlotterComponent,
 				canActivate: [UserGuard],
+			},
+
+			{
+				path: 'barangay-clearance',
+				component: BarangayClearanceComponent,
+				canActivate: [UserGuard]
 			},
 		]
 	}

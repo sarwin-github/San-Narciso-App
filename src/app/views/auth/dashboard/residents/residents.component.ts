@@ -13,6 +13,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 export class ResidentsComponent implements OnInit, OnDestroy {
 	private req: Subscription;
 	public residents: any;
+	public item_search: string;
 
 	constructor(
 		private spinner: NgxSpinnerService,
@@ -27,7 +28,7 @@ export class ResidentsComponent implements OnInit, OnDestroy {
 			setTimeout(() => {
 				this.spinner.hide();
 				this.residents = result.residents;
-			}, 4000);
+			}, 3000);
 		});
 	}
 

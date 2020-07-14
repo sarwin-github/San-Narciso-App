@@ -25,8 +25,8 @@ export class AddHouseholdComponent implements OnInit {
 	public residents : any;
 	public message : string;
 	public error   : string;
-	public sourceInhabitant: Car[];  
-	public currentInhabitant: Car[];
+	public sourceInhabitant;  
+	public currentInhabitant;
 
 	constructor(private router:Router, 
 		private activatedRoute: ActivatedRoute,
@@ -64,7 +64,8 @@ export class AddHouseholdComponent implements OnInit {
 			'street' : this.householdForm.get('street').value,
 			'barangay' : this.householdForm.get('barangay').value,
 			'city' : this.householdForm.get('city').value,
-			'province' : this.householdForm.get('province').value
+			'province' : this.householdForm.get('province').value,
+			'household_inhabitants': this.currentInhabitant.map(el => el._id)
 		};
 
 		console.log(body)

@@ -1,0 +1,85 @@
+<div class="container-fluid px-0 mb-5">
+	<div class="row">
+		<div class="col-12 col-sm-12 col-md-12 px-md-0 pt-md-5" style="position: relative !important;">
+			<div >
+				<div class="card bg-white container-shadow px-4 ml-3">
+					<div class="card-header text-uppercase py-4 bg-dark-blue px-5" style="position: absolute !important; top: -30px !important;">
+						<span style="font-size: 18px !important;">BARANGAY CLEARANCE</span>
+					</div>
+					<div class="card-body bg-white pt-5" style="min-height: 600px">
+						<div class="text-right">
+							<button class="btn bg-dark-blue px-3" routerLink="/community/blotters/add">
+								GENERATE BRGY CLEARANCE
+								<i class="ml-2 fa fa-plus"></i>
+							</button>
+						</div>
+						<div class="px-1">
+							<hr>
+							<div class="text-justify text-dark">
+								<div class="float-right mr-2">
+									<div class="input-group">
+									  	<input type="text" class="form-control py-3" placeholder="Search">
+									  	<div class="input-group-append">
+									    	<span class="input-group-text bg-dark-blue fa fa-search"></span>
+									  	</div>
+									</div>
+								</div>
+								
+								<p>Lorem ipsum dolor sit amet, veri modus conceptam mel cu, has in dictas discere qualisque, saperet ullamcorper ad eum. </p>
+							</div>
+							<br>
+							
+							<div class="row">
+								<div class="col-12  mb-3 pr-lg-4">
+									<table class="table text-dark" style="min-height: 400px">
+										<thead>
+											<tr>
+												<th scope="col">Barangay Clearance ID</th>
+												<th scope="col">Request By</th>
+												<th scope="col">Date of Request</th>
+												<th scope="col">Reason</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody *ngIf="blotters?.length > 0">
+											<tr>
+												<th scope="row">1001</th>
+												<td>Mark Otto</td>
+												<td>Jul 25, 2020</td>
+												<td>For Travel Pass</td>
+												<td>
+													<span class="fa fa-cog mr-2"></span>
+													<span class="pt-0">Action</span>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">1002</th>
+												<td>Jacob Thornton</td>
+												<td>Jul 25, 2020</td>
+												<td>For Travel Pass</td>
+												<td>
+													<span class="fa fa-cog mr-2"></span>
+													<span class="pt-0">Action</span>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">1003</th>
+												<td>George Jameson</td>
+												<td>Jul 25, 2020</td>
+												<td>For Travel Pass</td>
+												<td>
+													<span class="fa fa-cog mr-2"></span>
+													<span class="pt-0">Action</span>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -5,16 +5,15 @@ import { Subscription } from 'rxjs';
 import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
-	selector: 'app-households',
+	selector: 'app-barangay-clearance',
 	animations: [mainAnimations],
-	templateUrl: './households.component.html',
-	styleUrls: ['./households.component.scss']
+	templateUrl: './barangay-clearance.component.html',
+	styleUrls: ['./barangay-clearance.component.scss']
 })
-export class HouseholdsComponent implements OnInit {
+export class BarangayClearanceComponent implements OnInit {
 	private req: Subscription;
-	public households;
-	public item_search: string;
-	
+	public blotters: any;
+
 	constructor(
 		private spinner: NgxSpinnerService,
 		private householdService: HouseholdService) { }
@@ -27,7 +26,7 @@ export class HouseholdsComponent implements OnInit {
 			console.log(result)
 			setTimeout(() => {
 				this.spinner.hide();
-				this.households = result.households;
+				this.blotters = result.households;
 			}, 3000);
 		});
 	}
@@ -35,5 +34,4 @@ export class HouseholdsComponent implements OnInit {
 	ngOnDestroy(): void{
 		if(this.req) this.req.unsubscribe();
 	}
-
 }

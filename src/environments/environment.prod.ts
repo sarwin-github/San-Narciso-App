@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  server: 'http://localhost:5050'
+  //server: 'http://localhost:6060'
+  server: 'https://api-brgy-e-portal.herokuapp.com'
 };

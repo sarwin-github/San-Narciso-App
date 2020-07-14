@@ -18,7 +18,8 @@
 							<div class="text-justify text-dark">
 								<div class="float-right mr-2">
 									<div class="input-group">
-									  	<input type="text" class="form-control py-3" placeholder="Search">
+									  	<input type="text" class="form-control py-3" [(ngModel)]="item_search"
+									  	placeholder="Search">
 									  	<div class="input-group-append">
 									    	<span class="input-group-text bg-dark-blue fa fa-search"></span>
 									  	</div>
@@ -35,47 +36,27 @@
 										<thead>
 											<tr>
 												<th scope="col">Household ID</th>
-												<th scope="col">Family Name</th>
+												<th scope="col">Household Name</th>
 												<th scope="col">Primary Phone</th>
 												<th scope="col">Email</th>
 												<th></th>
 											</tr>
 										</thead>
 										<tbody *ngIf="households?.length > 0">
-											<tr>
-												<th scope="row">1001</th>
-												<td>Otto</td>
-												<td>(041)-797-1532</td>
-												<td>mark_otto@mdo</td>
+											<tr *ngFor="let household of households | searchPipe: item_search">
+												<th scope="row" class="text-uppercase">{{household?._id.slice(0,7)}}</th>
+												<td>{{household?.household_name}}</td>
+												<td>{{household?.household_head.phone}}</td>
+												<td>{{household?.household_head.email}}</td>
 												<td>
-													<span class="fa fa-cog mr-2"></span>
-													<span class="pt-0">Action</span>
-												</td>
-											</tr>
-											<tr>
-												<th scope="row">1002</th>
-												<td>Thornton</td>
-												<td>(041) 797 7523</td>
-												<td>jacob_thorton@fat</td>
-												<td>
-													<span class="fa fa-cog mr-2"></span>
-													<span class="pt-0">Action</span>
-												</td>
-											</tr>
-											<tr>
-												<th scope="row">1003</th>
-												<td>Jameson</td>
-												<td>(041)-797-2214</td>
-												<td>larry_bird@twitter</td>
-												<td>
-													<span id="dd" 
+													<span id="{{household?._id.slice(0,7)}}" 
 													data-toggle="dropdown" class="action-td"
 													aria-haspopup="true" aria-expanded="false">
 														<span class="fa fa-cog mr-2"></span>
 														<span class="pt-0">Action</span>
 													</span>
 
-													<div class="dropdown-menu" aria-labelledby="dd">
+													<div class="dropdown-menu" aria-labelledby="{{household?._id.slice(0,7)}}">
 													    <a class="dropdown-item"> 
 													    	<span class="fa fa-eye mr-2"></span>View
 													    </a>

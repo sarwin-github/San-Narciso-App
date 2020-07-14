@@ -19,14 +19,14 @@
 							<div class="text-justify text-dark">
 								<div class="float-right mr-2">
 									<div class="input-group">
-									  	<input type="text" class="form-control py-3" placeholder="Search">
+									  	<input type="text" class="form-control py-3" [(ngModel)]="item_search" placeholder="Search">
 									  	<div class="input-group-append">
 									    	<span class="input-group-text bg-dark-blue fa fa-search"></span>
 									  	</div>
 									</div>
 								</div>
 
-								<p>Lorem ipsum dolor sit amet, veri modus conceptam mel cu, has in dictas discere qualisque, saperet ullamcorper ad eum. </p>
+								<p>Lorem ipsum dolor sit amet, veri modus conceptam mel cu, has in dictas discere qualisque, saperet ullamcorper ad eum. </p> 
 							</div>
 							<br>
 							
@@ -43,7 +43,7 @@
 											</tr>
 										</thead>
 										<tbody *ngIf="residents?.length > 0">
-											<tr *ngFor="let resident of residents">
+											<tr *ngFor="let resident of residents | searchPipe: item_search">
 												<th scope="row">
 													<span class="text-uppercase">{{resident?._id.slice(0,7)}}</span>
 												</th>
