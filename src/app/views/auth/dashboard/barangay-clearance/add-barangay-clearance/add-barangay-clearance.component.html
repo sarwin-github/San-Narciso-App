@@ -4,11 +4,11 @@
 			<div >
 				<div class="card bg-white container-shadow px-4 ml-3">
 					<div class="card-header text-uppercase py-4 bg-dark-blue px-5" style="position: absolute !important; top: -30px !important;">
-						<span style="font-size: 18px !important;">Add New Blotter</span>
+						<span style="font-size: 18px !important;">Create Barangay Clearance</span>
 					</div>
 					<div class="card-body bg-white pt-5">
 						<div class="text-right">
-							<button class="btn bg-dark-blue px-3" routerLink="/community/blotters">
+							<button class="btn bg-dark-blue px-3" routerLink="/community/barangay-clearance">
 								<i class="mr-2 fa fa-chevron-left"></i>
 								Back to List
 							</button>
@@ -23,18 +23,18 @@
 							<div class="row">
 								<form [formGroup]="blotterForm" (submit)="createNewHousehold()" 
 								class="col-12 col-sm-12 col-md-6 mb-3 pr-lg-4">
-									<h5 class="text-white p-2 mb-3 bg-dark-blue">Blotter Information</h5>
+									<h5 class="text-white p-2 mb-3 bg-dark-blue">Barangay Clearance Information</h5>
 									<div class="row">
 										<div class=" col-12 col-sm-12 col-md-6">
 											<input type="date" class="form-control py-4" placeholder="Date of Filing" formControlName="household_head" required>
 											<span class="floating-label">
-												<span class="floating-label-bg">Date of Filing</span>
+												<span class="floating-label-bg">Date of Request</span>
 											</span>
 										</div>
 										<div class="form-group col-12 col-sm-12 col-md-6">
 											<input type="text" class="form-control py-4" placeholder="Case Number" formControlName="household_number" required disabled="true">
 											<span class="floating-label">
-												<span class="floating-label-bg">Case Number</span>
+												<span class="floating-label-bg">Clearance Number</span>
 											</span>
 										</div>
 									</div>
@@ -49,42 +49,32 @@
 											</select>
 
 											<span class="floating-label">
-												<span class="floating-label-bg">Complainant</span>
+												<span class="floating-label-bg">Request By</span>
 											</span>
 										</div>
 									</div>
 
 									<div class="row mt-4">
 										<div class=" col-12 col-sm-12 col-md-12">
-											<select class="form-control text-dark pr-3" 
-											style="height:50px !important;"
-												formControlName="household_head" required>
-												<option *ngFor="let resident of residents" [value]="resident?._id">{{resident?.last_name}}, {{resident?.first_name}} 
-												</option>
-											</select>
+											<input type="text" class="form-control py-4" placeholder="Issued By" formControlName="household_head" required>
 
 											<span class="floating-label">
-												<span class="floating-label-bg">Complainaned Resident</span>
+												<span class="floating-label-bg">Issued By</span>
 											</span>
 										</div>
 									</div>
 
 									<div class="row mt-4">
 										<div class=" col-12 col-sm-12 col-md-12">
-											<select class="form-control text-dark pr-3" 
-											style="height:50px !important;"
-												formControlName="household_head" required>
-												<option *ngFor="let resident of residents" [value]="resident?._id">{{resident?.last_name}}, {{resident?.first_name}} 
-												</option>
-											</select>
+											<input type="text" class="form-control py-4" placeholder="Short Reason" formControlName="household_head" required>
 
 											<span class="floating-label">
-												<span class="floating-label-bg">Officer In Charge</span>
+												<span class="floating-label-bg">Short Reason</span>
 											</span>
 										</div>
 									</div>
 
-									<h5 class="text-white p-2 my-3 bg-dark-blue">Description</h5>
+									<h5 class="text-white p-2 my-3 bg-dark-blue">Reason Summary</h5>
 									<div class="form-group">
 									    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
 									</div>
@@ -93,7 +83,7 @@
 								</form>
 
 								<div class="col-12 col-sm-12 col-md-6">
-									<h5 class="text-white p-2 mb-3 bg-dark-blue">Related Blotters of the Complained Resident</h5>
+									<h5 class="text-white p-2 mb-3 bg-dark-blue">Pending or Previous Blotter Case of the Requester</h5>
 									<div class="col-12  mb-3 pr-lg-4">
 										<table class="table text-dark" style="min-height: 400px" 
 										*ngIf="blotterForm?.get('household_head').value">

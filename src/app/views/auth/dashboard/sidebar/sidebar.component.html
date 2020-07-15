@@ -76,5 +76,16 @@
       </div>
     </a>
 
+    <a (click)="closeSidebar('/community/barangay-clearance')"
+    [ngClass]="!open && location.match('/community/non-resident') ? 'router-link-active' : 
+    open && location.match('/community/non-resident') ? 'router-link-active-parent pl-3': ''"
+    class="list-group-item flex-column align-items-start py-3">
+      <div class="d-flex w-100 justify-content-start align-items-center">
+        <span class="material-icons">recent_actors </span>
+        <span class="menu-collapsed" *ngIf="linkDisplayed">Non-Resident Officers</span>
+        <span class="submenu-icon ml-auto"></span>
+      </div>
+    </a>
+
   </ul><!-- List Group END-->
 </div><!-- sidebar-container END -->

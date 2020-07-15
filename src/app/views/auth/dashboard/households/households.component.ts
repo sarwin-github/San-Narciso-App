@@ -28,7 +28,7 @@ export class HouseholdsComponent implements OnInit {
 			setTimeout(() => {
 				this.spinner.hide();
 				this.households = result.households;
-			}, 3000);
+			}, 1000);
 		});
 	}
 

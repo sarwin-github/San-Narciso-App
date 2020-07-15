@@ -11,13 +11,14 @@ import { MessageService } from 'primeng/api';
 import { ResidentService } from '../../../../../shared/services/resident/resident.service';
 
 @Component({
-	selector: 'app-add-blotter',
+	selector: 'app-add-barangay-clearance',
 	animations: [mainAnimations],
-	templateUrl: './add-blotter.component.html',
-	styleUrls: ['./add-blotter.component.scss'],
+	templateUrl: './add-barangay-clearance.component.html',
+	styleUrls: ['./add-barangay-clearance.component.scss'],
 	providers: [MessageService]
 })
-export class AddBlotterComponent implements OnInit {
+export class AddBarangayClearanceComponent implements OnInit {
+
 	private residentReq: Subscription;
 	private req: Subscription;
 
@@ -94,5 +95,6 @@ export class AddBlotterComponent implements OnInit {
 
 		if(this.req) this.req.unsubscribe();
 	}
+
 
 }

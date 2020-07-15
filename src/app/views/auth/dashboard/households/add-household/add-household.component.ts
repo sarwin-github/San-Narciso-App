@@ -37,6 +37,8 @@ export class AddHouseholdComponent implements OnInit {
 		private formBuilder: FormBuilder,) { }
 
 	createForm(){
+		window.scrollTo({ top: 0, behavior: 'smooth'});
+		
 		this.residentReq = this.residentService.getListOfResidents()
 		.subscribe(result => {
 			console.log(result)

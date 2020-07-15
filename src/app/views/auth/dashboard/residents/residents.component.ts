@@ -28,7 +28,7 @@ export class ResidentsComponent implements OnInit, OnDestroy {
 			setTimeout(() => {
 				this.spinner.hide();
 				this.residents = result.residents;
-			}, 3000);
+			}, 1000);
 		});
 	}
 

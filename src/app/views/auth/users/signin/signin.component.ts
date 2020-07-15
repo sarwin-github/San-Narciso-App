@@ -61,7 +61,7 @@ export class SigninComponent implements OnInit {
 	  		this.spinner.hide();
 	  		if(!this.message || !this.error)
 	  			this.error = "There have been an error while connecting with the server";
-	  	}, 5000)
+	  	}, 10000)
 		// execute http post request
 		this.postReq = this.UsersService
 		.postLogin(JSON.stringify(body))

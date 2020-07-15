@@ -16,6 +16,8 @@ import { AddBlotterComponent } from './blotters/add-blotter/add-blotter.componen
 import { EditBlotterComponent } from './blotters/edit-blotter/edit-blotter.component';
 
 import { BarangayClearanceComponent } from './barangay-clearance/barangay-clearance.component';
+import { AddBarangayClearanceComponent } from './barangay-clearance/add-barangay-clearance/add-barangay-clearance.component';
+import { EditBarangayClearanceComponent } from './barangay-clearance/edit-barangay-clearance/edit-barangay-clearance.component';
 
 
 export const DashboardRoutes: Routes = [
@@ -80,6 +82,16 @@ export const DashboardRoutes: Routes = [
 			{
 				path: 'barangay-clearance',
 				component: BarangayClearanceComponent,
+				canActivate: [UserGuard]
+			},
+			{
+				path: 'barangay-clearance/create',
+				component: AddBarangayClearanceComponent,
+				canActivate: [UserGuard]
+			},
+			{
+				path: 'barangay-clearance/edit',
+				component: EditBarangayClearanceComponent,
 				canActivate: [UserGuard]
 			},
 		]

@@ -29,6 +29,8 @@ export class AddResidentComponent implements OnInit {
 		private formBuilder: FormBuilder,) { }
 
 	createForm(){
+		window.scrollTo({ top: 0, behavior: 'smooth'});
+		
 		this.residentForm = this.formBuilder.group({
 			'email'     	 : [null, Validators.compose([Validators.required, Validators.email])],
 			// personal

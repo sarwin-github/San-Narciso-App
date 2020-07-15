@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
 		setTimeout(() => {
 			this.spinner.hide();
 			this.dashboardItems = 'yeah';
-		}, 3000);
+		}, 2000);
 	}
 
 }

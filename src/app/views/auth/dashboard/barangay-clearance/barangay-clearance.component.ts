@@ -27,7 +27,7 @@ export class BarangayClearanceComponent implements OnInit {
 			setTimeout(() => {
 				this.spinner.hide();
 				this.blotters = result.households;
-			}, 3000);
+			}, 1000);
 		});
 	}
 
