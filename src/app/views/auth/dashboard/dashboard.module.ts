@@ -26,6 +26,10 @@ import { BarangayClearanceComponent } from './barangay-clearance/barangay-cleara
 import { AddBarangayClearanceComponent } from './barangay-clearance/add-barangay-clearance/add-barangay-clearance.component';
 import { EditBarangayClearanceComponent } from './barangay-clearance/edit-barangay-clearance/edit-barangay-clearance.component';
 
+import { NonResidentsComponent } from './non-residents/non-residents.component';
+import { AddNonResidentComponent } from './non-residents/add-non-resident/add-non-resident.component';
+import { EditNonResidentComponent } from './non-residents/edit-non-resident/edit-non-resident.component';
+
 import { SharedPipeModule } from '../../../shared/shared-pipe.module';
 import { NgxSpinnerModule } from "ngx-spinner";
 
@@ -56,7 +60,10 @@ import { NgxSpinnerModule } from "ngx-spinner";
 		EditBlotterComponent,
 		BarangayClearanceComponent,
 		AddBarangayClearanceComponent,
-		EditBarangayClearanceComponent
+		EditBarangayClearanceComponent,
+		NonResidentsComponent,
+		AddNonResidentComponent,
+		EditNonResidentComponent
 	]
 })
 export class DashboardModule { }

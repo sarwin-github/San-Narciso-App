@@ -19,6 +19,9 @@ import { BarangayClearanceComponent } from './barangay-clearance/barangay-cleara
 import { AddBarangayClearanceComponent } from './barangay-clearance/add-barangay-clearance/add-barangay-clearance.component';
 import { EditBarangayClearanceComponent } from './barangay-clearance/edit-barangay-clearance/edit-barangay-clearance.component';
 
+import { NonResidentsComponent } from './non-residents/non-residents.component';
+import { AddNonResidentComponent } from './non-residents/add-non-resident/add-non-resident.component';
+import { EditNonResidentComponent } from './non-residents/edit-non-resident/edit-non-resident.component';
 
 export const DashboardRoutes: Routes = [
 	{ 
@@ -92,6 +95,22 @@ export const DashboardRoutes: Routes = [
 			{
 				path: 'barangay-clearance/edit',
 				component: EditBarangayClearanceComponent,
+				canActivate: [UserGuard]
+			},
+
+			{
+				path: 'non-residents',
+				component: NonResidentsComponent,
+				canActivate: [UserGuard]
+			},
+			{
+				path: 'non-residents/add',
+				component: AddNonResidentComponent,
+				canActivate: [UserGuard]
+			},
+			{
+				path: 'non-residents/edit',
+				component: EditNonResidentComponent,
 				canActivate: [UserGuard]
 			},
 		]

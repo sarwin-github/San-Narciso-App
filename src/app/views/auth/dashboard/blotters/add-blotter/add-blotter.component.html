@@ -4,7 +4,7 @@
 			<div >
 				<div class="card bg-white container-shadow px-4 ml-3">
 					<div class="card-header text-uppercase py-4 bg-dark-blue px-5" style="position: absolute !important; top: -30px !important;">
-						<span style="font-size: 18px !important;">Add New Blotter</span>
+						<span style="font-size: 18px !important;">Add New Blotter Case</span>
 					</div>
 					<div class="card-body bg-white pt-5">
 						<div class="text-right">
@@ -73,13 +73,33 @@
 										<div class=" col-12 col-sm-12 col-md-12">
 											<select class="form-control text-dark pr-3" 
 											style="height:50px !important;"
-												formControlName="household_head" required>
+												formControlName="officer_in_charge" required>
 												<option *ngFor="let resident of residents" [value]="resident?._id">{{resident?.last_name}}, {{resident?.first_name}} 
+												</option>
+												<option value="nonResident">
+												Non-Resident Officer 
 												</option>
 											</select>
 
 											<span class="floating-label">
 												<span class="floating-label-bg">Officer In Charge</span>
+											</span>
+										</div>
+									</div>
+
+									<div class="row mt-4" 
+									*ngIf="blotterForm?.get('officer_in_charge').value === 'nonResident'">
+										<div class=" col-12 col-sm-12 col-md-12">
+											<select class="form-control text-dark pr-3" 
+											style="height:50px !important;"
+												formControlName="household_head" required>
+												<option *ngFor="let nonResident of nonResidents" 
+												[value]="nonResident?._id">{{nonResident?.last_name}}, {{nonResident?.first_name}} 
+												</option>
+											</select>
+
+											<span class="floating-label">
+												<span class="floating-label-bg">Non-Resident Officer</span>
 											</span>
 										</div>
 									</div>

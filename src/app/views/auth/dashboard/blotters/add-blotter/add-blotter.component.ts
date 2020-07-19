@@ -9,6 +9,7 @@ import { Car } from '../../../../../shared/domain/car';
 import { CarService } from '../../../../../shared/services/car/car.service';
 import { MessageService } from 'primeng/api';
 import { ResidentService } from '../../../../../shared/services/resident/resident.service';
+import { NonResidentService } from '../../../../../shared/services/non-resident/non-resident.service';
 
 @Component({
 	selector: 'app-add-blotter',
@@ -19,9 +20,11 @@ import { ResidentService } from '../../../../../shared/services/resident/residen
 })
 export class AddBlotterComponent implements OnInit {
 	private residentReq: Subscription;
+	private nonResidentReq: Subscription;
 	private req: Subscription;
 
 	public residents : any;
+	public nonResidents: any;
 	public blotterForm : FormGroup;
 	public message : string;
 	public error   : string;
@@ -30,6 +33,7 @@ export class AddBlotterComponent implements OnInit {
 	constructor(private router:Router, 
 		private activatedRoute: ActivatedRoute,
 		private residentService: ResidentService,
+		private nonResidentService: NonResidentService,
 		private householdService: HouseholdService,
 		private messageService: MessageService,
 		private formBuilder: FormBuilder,) { }
@@ -43,6 +47,12 @@ export class AddBlotterComponent implements OnInit {
 			this.residents = result.residents;
 		});
 
+		this.nonResidentReq = this.nonResidentService.getListOfNonResidents()
+		.subscribe(result => {
+			console.log(result)
+			this.nonResidents = result.nonResidents;
+		});
+
 		this.blotterForm = this.formBuilder.group({
 			'household_head' : [null, Validators.compose([Validators.required])],//
 			'household_name' : [null, Validators.compose([Validators.required])],//
@@ -51,7 +61,7 @@ export class AddBlotterComponent implements OnInit {
 			'barangay'		: [null, Validators.compose([Validators.required])],//
 			'city'			: [null, Validators.compose([Validators.required])],//
 			'province'		: [null, Validators.compose([Validators.required])],//
-			
+			'officer_in_charge' : [null, Validators.compose([Validators.required])],//
 		});
 	}
 

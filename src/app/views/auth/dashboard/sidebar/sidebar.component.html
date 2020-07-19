@@ -27,7 +27,7 @@
       <div class="d-flex w-100 justify-content-start align-items-center">
         <span class="material-icons">dashboard </span>
         <span ><!--  <img src="/assets/images/company_dashboard_menu.svg"> --></span>
-        <span class="menu-collapsed" *ngIf="linkDisplayed">Dashboard</span>
+        <span class="menu-collapsed" *ngIf="linkDisplayed">Community Dashboard</span>
         <span class="submenu-icon ml-auto"></span>
       </div>
     </a>
@@ -54,13 +54,15 @@
       </div>
     </a>
 
+    <hr class="text-dark">
+
     <a (click)="closeSidebar('/community/blotters')"
     [ngClass]="!open && location.match('/community/blotters') ? 'router-link-active' : 
     open && location.match('/community/blotters') ? 'router-link-active-parent pl-3': ''"
     class="list-group-item flex-column align-items-start py-3">
       <div class="d-flex w-100 justify-content-start align-items-center">
         <span class="material-icons">remove_from_queue </span>
-        <span class="menu-collapsed" *ngIf="linkDisplayed">Blotter</span>
+        <span class="menu-collapsed" *ngIf="linkDisplayed">Barangay Blotter</span>
         <span class="submenu-icon ml-auto"></span>
       </div>
     </a>
@@ -76,9 +78,9 @@
       </div>
     </a>
 
-    <a (click)="closeSidebar('/community/barangay-clearance')"
-    [ngClass]="!open && location.match('/community/non-resident') ? 'router-link-active' : 
-    open && location.match('/community/non-resident') ? 'router-link-active-parent pl-3': ''"
+    <a (click)="closeSidebar('/community/non-residents')"
+    [ngClass]="!open && location.match('/community/non-residents') ? 'router-link-active' : 
+    open && location.match('/community/non-residents') ? 'router-link-active-parent pl-3': ''"
     class="list-group-item flex-column align-items-start py-3">
       <div class="d-flex w-100 justify-content-start align-items-center">
         <span class="material-icons">recent_actors </span>

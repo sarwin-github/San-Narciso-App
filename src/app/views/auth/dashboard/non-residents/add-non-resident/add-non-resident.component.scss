@@ -1,0 +1,69 @@
+.modal{
+  z-index: 99999999999;
+}
+
+.side-image{
+  object-fit: cover;
+  width: 100%;
+  height: 170px;
+}
+
+input:focus:valid ~ .floating-label,
+input:not(:focus):valid ~ .floating-label{
+  top: -10px;
+  bottom: 10px;
+  left: 20px;
+  font-size: 13px;
+  opacity: 1;
+  color: gray;
+  z-index: 9999 !important;
+  span{
+    background: white;
+    padding: 0 5px;
+  }
+
+}
+
+select:focus:valid ~ .floating-label,
+select:not(:focus):valid ~ .floating-label{
+  top: -10px;
+  bottom: 10px;
+  left: 20px;
+  font-size: 13px;
+  opacity: 1;
+  color: gray;
+  z-index: 9999 !important;
+  span{
+    background: white;
+    padding: 0 5px;
+  }
+}
+
+select ~ .floating-label{
+  bottom: 13px;
+  left: 20px;
+  font-size: 13.5px;
+  opacity: 1;
+  color: #949494;
+  z-index: 9999 !important;
+  font-weight: 500;
+  span{
+    background: white;
+    padding: 0 5px;
+  }
+
+}
+
+.floating-label-bg:focus {
+  background: white;
+}
+
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 20px;
+  top: 18px;
+  transition: 0.2s ease all;
+  color: transparent;
+}
+

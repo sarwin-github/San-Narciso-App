@@ -1,0 +1,85 @@
+<div class="container-fluid px-0 mb-5">
+	<div class="row">
+		<div class="col-12 col-sm-12 col-md-12 px-md-0 pt-md-5" style="position: relative !important;">
+			<div >
+				<div class="card bg-white container-shadow px-4 ml-3">
+					<div class="card-header text-uppercase py-4 bg-dark-blue px-5" style="position: absolute !important; top: -30px !important;">
+						<span style="font-size: 18px !important;">List of Non-Residents</span>
+					</div>
+					<div class="card-body bg-white pt-5" style="min-height: 600px">
+						<div class="text-right">
+							<button class="btn bg-dark-blue px-3" routerLink="/community/non-residents/add">
+								Add Non-Resident
+								<i class="ml-2 fa fa-plus"></i>
+							</button>
+						</div>
+						
+						<div class="px-1">
+							<hr>
+							<div class="text-justify text-dark">
+								<div class="float-right mr-2">
+									<div class="input-group">
+									  	<input type="text" class="form-control py-3" [(ngModel)]="item_search" placeholder="Search">
+									  	<div class="input-group-append">
+									    	<span class="input-group-text bg-dark-blue fa fa-search"></span>
+									  	</div>
+									</div>
+								</div>
+
+								<p>Lorem ipsum dolor sit amet, veri modus conceptam mel cu, has in dictas discere qualisque, saperet ullamcorper ad eum. </p> 
+							</div>
+							<br>
+							
+							<div class="row">
+								<div class="col-12  mb-3 pr-lg-4">
+									<table class="table text-dark" style="min-height: 400px">
+										<thead>
+											<tr>
+												<th scope="col">Non-Resident ID</th>
+												<th scope="col">Full Name</th>
+												<th scope="col">Phone</th>
+												<th scope="col">Email</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody *ngIf="nonResidents?.length > 0">
+											<tr *ngFor="let nonResident of nonResidents | searchPipe: item_search">
+												<th scope="row">
+													<span class="text-uppercase">{{nonResident?._id.slice(0,7)}}</span>
+												</th>
+												<td>{{nonResident?.first_name}} {{nonResident?.last_name}}</td>
+												<td>{{nonResident?.phone}}</td>
+												<td>{{nonResident?.email}}</td>
+												<td>
+													<span id="{{nonResident?._id.slice(0,7)}}" 
+													data-toggle="dropdown" class="action-td"
+													aria-haspopup="true" aria-expanded="false">
+														<span class="fa fa-cog mr-2"></span>
+														<span class="pt-0">Action</span>
+													</span>
+
+													<div class="dropdown-menu" aria-labelledby="{{nonResident?._id.slice(0,7)}}">
+													    <a class="dropdown-item"> 
+													    	<span class="fa fa-eye mr-2"></span>View
+													    </a>
+													    <a class="dropdown-item">
+													    	<span class="fa fa-edit mr-2"></span>Edit
+													    </a>
+													    <a class="dropdown-item">
+													    	<span class="fa fa-trash mr-2"></span>Delete
+													    </a>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

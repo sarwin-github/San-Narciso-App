@@ -1,0 +1,336 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel"></h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body text-center">
+				<div style="text-align:center">
+					<div>
+						<webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+						[allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+						[videoOptions]="videoOptions"
+						[imageQuality]="1"
+						(cameraSwitched)="cameraWasSwitched($event)"
+						(initError)="handleInitError($event)"
+						></webcam>
+						<br/>
+						<button class="actionBtn" (click)="triggerSnapshot();">Take A Snapshot</button>
+						<button class="actionBtn" (click)="toggleWebcam();">Toggle Webcam</button>
+						<br/>
+					</div>
+				</div>
+
+				<div class="snapshot mt-3" *ngIf="webcamImage">
+					<img [src]="webcamImage.imageAsDataUrl"/>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid px-0 mb-5" [@animate]="{value:'*', params:{ scale:'.9', delay:'400ms' }}">
+	<div class="row">
+		<div class="col-12 col-sm-12 col-md-12 px-md-0 pt-md-5" style="position: relative !important;">
+			<div >
+				<div class="card bg-white container-shadow px-4 ml-3">
+					<div class="card-header text-uppercase py-4 bg-dark-blue px-5" style="position: absolute !important; top: -30px !important;">
+						<span style="font-size: 18px !important;">Add New Non-Resident</span>
+					</div>
+					<div class="card-body bg-white pt-5">
+						<div class="text-right">
+							<button class="btn bg-dark-blue px-3" routerLink="/community/non-residents">
+								<i class="mr-2 fa fa-chevron-left"></i>
+								Back to List
+							</button>
+						</div>
+						<div class="px-1">
+							<hr>
+							<div class="text-justify text-dark">
+								<p>Lorem ipsum dolor sit amet, veri modus conceptam mel cu, has in dictas discere qualisque, saperet ullamcorper ad eum. </p>
+							</div>
+							<hr>
+							
+							<div class="row">
+								<div class="col-12 col-sm-12 col-md-2 text-center">
+									<img class="img img-fluid side-image" *ngIf="!webcamImage"
+									 width="100%" src="/assets/images/face-1.jpg" alt="">
+									<div class="snapshot mt-3" *ngIf="webcamImage">
+										<img class="img img-fluid side-image" [src]="webcamImage.imageAsDataUrl"/>
+									</div>
+
+									<button class="btn bg-dark-blue px-3 mt-2" 
+									data-toggle="modal" data-target="#exampleModal">
+										
+										Access Camera <i class="ml-2 fa fa-camera"></i>
+									</button>
+								</div>
+
+								<div class="col-12 col-sm-12 col-md-10 mb-3 pr-lg-4">
+									<form [formGroup]="nonResidentForm" (submit)="createNewResident()">
+										<!-- Error Message -->
+										<div class="alert alert-danger alert-dismissible fade show error-message" [@animate]="{value:'*', params:{ y:'50px', delay:'600ms' }}" *ngIf="error" role="alert">
+											<a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="onAlertClose()">&times;</a>
+											<span [innerHtml]="error"></span>
+										</div>  
+
+										<div class="alert alert-success alert-dismissible fade show success-message" [@animate]="{value:'*', params:{ y:'50px', delay:'600ms' }}" *ngIf="message" role="alert">
+											<a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="onAlertClose()">&times;</a>
+											<span [innerHtml]="message"></span>
+										</div>  
+
+										<h5 class="text-white p-2 mb-3 bg-dark-blue">Personal Information</h5>
+										<div class="row">
+											<div class=" col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="First Name" formControlName="first_name" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">First Name</span>
+												</span>
+											</div>
+											<div class="form-group col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="Middle Name" formControlName="middle_name" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Middle Name</span>
+												</span>
+											</div>
+
+											<div class="form-group col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="Last Name" formControlName="last_name" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Last Name</span>
+												</span>
+											</div>
+										</div>
+
+										<br>
+										<div class="row">
+											<div class=" col-12 col-sm-12 col-md-4">
+												<input type="date" class="form-control py-4" placeholder="Birthday" formControlName="birthday" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Birthday</span>
+												</span>
+											</div>
+
+											<div class="form-group col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="Birth Place" formControlName="birthplace" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Birth Place</span>
+												</span>
+											</div>
+
+											<div class="form-group col-12 col-sm-12 col-md-2">
+												<input type="number" class="form-control py-4" placeholder="Age" formControlName="age" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Age</span>
+												</span>
+											</div>
+
+											<div class="form-group col-12 col-sm-12 col-md-2">
+												<select class="form-control text-dark pr-3" 
+												style="height:50px !important;"
+													formControlName="gender" required>
+													<option>Male</option>
+													<option>Female</option>
+												</select>
+												<span class="floating-label">
+													<span class="floating-label-bg">Gender</span>
+												</span>
+											</div>
+										</div>
+
+										<br>
+										<div class="row">
+											<div class="form-group col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="Period of Residence" formControlName="period_of_residence" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Period of Residence</span>
+												</span>
+											</div>
+
+											<div class="form-group col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="Occupation" formControlName="occupation" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Occupation</span>
+												</span>
+											</div>
+
+											<div class="form-group col-12 col-sm-12 col-md-2">
+												<input type="text" class="form-control py-4" placeholder="Religion" formControlName="religion" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Religion</span>
+												</span>
+											</div>
+
+											<div class="form-group col-12 col-sm-12 col-md-2">
+												<!-- <input type="text" class="form-control py-4" placeholder="Civil Status" formControlName="first_name" required> -->
+												<select class="form-control text-dark pr-3" 
+												style="height:50px !important;"
+													formControlName="civil_status" required>
+													<option>Single</option>
+													<option>Married</option>
+													<option>Widowed</option>
+												</select>
+
+												<span class="floating-label">
+													<span class="floating-label-bg">Civil Status</span>
+												</span>
+											</div>
+										</div>
+
+										<br>
+										<h5 class="text-white p-2 mb-3 bg-dark-blue">Address</h5>
+										<div class="row">
+											<div class="form-group col-12 col-sm-12 col-md-8">
+												<input type="text" class="form-control py-4" placeholder="Street" formControlName="street" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Street</span>
+												</span>
+											</div>
+
+											<div class="form-group col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="Barangay" formControlName="barangay" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Barangay</span>
+												</span>
+											</div>
+										</div>
+										<br>
+										<div class="row">
+											<div class="form-group col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="City" formControlName="city" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">City</span>
+												</span>
+											</div>
+
+											<div class="form-group col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="Province" formControlName="province" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Province</span>
+												</span>
+											</div>
+
+											<div class="form-group col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="Citizenship" formControlName="citizenship" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Citizenship</span>
+												</span>
+											</div>
+										</div>
+
+										<br>
+										<h5 class="text-white p-2 mb-3 bg-dark-blue">Contact</h5>
+
+										<div class="row">
+											<div class="form-group col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="Contact Email" formControlName="email" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Contact Email</span>
+												</span>
+											</div>
+
+											<div class="form-group col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="Phone Number" formControlName="phone" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Phone Number</span>
+												</span>
+											</div>
+										</div>
+
+										<br>
+										<div class="row">
+											<div class="form-group col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="Tin Number" formControlName="tin_number" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Tin Number</span>
+												</span>
+											</div>
+
+											<div class="form-group col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="Voters Id Number" formControlName="voters_id_number" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Voters Id Number</span>
+												</span>
+											</div>
+
+											<div class="form-group col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="Precint Assignment Number" formControlName="precint_assignment_number" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Precint Assignment Number</span>
+												</span>
+											</div>
+										</div>
+										<br>
+
+										<h5 class="text-white p-2 mb-3 bg-dark-blue">Mother's Information</h5>
+
+										<div class="row">
+											<div class=" col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="First Name" formControlName="mother_information_first_name" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">First Name</span>
+												</span>
+											</div>
+
+											<div class="form-group col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="Middle Name" formControlName="mother_information_middle_name" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Middle Name</span>
+												</span>
+											</div>
+
+											<div class="form-group col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="Last Name" formControlName="mother_information_last_name" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Last Name</span>
+												</span>
+											</div>
+										</div>
+
+										<br>
+
+										<h5 class="text-white p-2 mb-3 bg-dark-blue">Father's Information</h5>
+
+										<div class="row">
+											<div class=" col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="First Name" formControlName="father_information_first_name" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">First Name</span>
+												</span>
+											</div>
+
+											<div class="form-group col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="Middle Name" formControlName="father_information_middle_name" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Middle Name</span>
+												</span>
+											</div>
+
+											<div class="form-group col-12 col-sm-12 col-md-4">
+												<input type="text" class="form-control py-4" placeholder="Last Name" formControlName="father_information_last_name" required>
+												<span class="floating-label">
+													<span class="floating-label-bg">Last Name</span>
+												</span>
+											</div>
+										</div>
+
+										<button type="submit" class="btn bg-dark-blue float-right mt-3 px-5">Submit</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<p-toast position="bottom-center"></p-toast>
