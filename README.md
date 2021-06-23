@@ -1,7 +1,10 @@
 # Sample Landing Page of San Narciso | San Andress e-Portal
 
 Visit @ https://brgy-e-portal.herokuapp.com
+
 You can use the following credentials to experiment
+
+## Click Portal to see different angular forms with Primeng
 email: dapito.sherwin@yahoo.com
 password: 123123123
 
