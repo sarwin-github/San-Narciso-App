@@ -28,8 +28,11 @@
 								<p>Lorem ipsum dolor sit amet, veri modus conceptam mel cu, has in dictas discere qualisque, saperet ullamcorper ad eum. </p>
 							</div>
 							<br>
-							
-							<div class="row">
+							<div *ngIf="clearance?.length == 0">
+								<hr>
+								<h5 class="text-dark">There's currently no barangay-clearance list available. Add a new barangay-clearance now.</h5>
+							</div>
+							<div class="row" *ngIf="clearance?.length > 0">
 								<div class="col-12  mb-3 pr-lg-4">
 									<table class="table text-dark" style="min-height: 400px">
 										<thead>
@@ -41,7 +44,7 @@
 												<th></th>
 											</tr>
 										</thead>
-										<tbody *ngIf="blotters?.length > 0">
+										<tbody>
 											<tr>
 												<th scope="row">1001</th>
 												<td>Mark Otto</td>

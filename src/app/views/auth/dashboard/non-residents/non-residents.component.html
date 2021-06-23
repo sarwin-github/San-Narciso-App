@@ -30,7 +30,12 @@
 							</div>
 							<br>
 							
-							<div class="row">
+							<div *ngIf="nonResidents?.length == 0">
+								<hr>
+								<h5 class="text-dark">There's currently no non-residents available. Add a new non-resident now.</h5>
+							</div>
+
+							<div class="row"  *ngIf="nonResidents?.length > 0">
 								<div class="col-12  mb-3 pr-lg-4">
 									<table class="table text-dark" style="min-height: 400px">
 										<thead>
@@ -42,7 +47,7 @@
 												<th></th>
 											</tr>
 										</thead>
-										<tbody *ngIf="nonResidents?.length > 0">
+										<tbody>
 											<tr *ngFor="let nonResident of nonResidents | searchPipe: item_search">
 												<th scope="row">
 													<span class="text-uppercase">{{nonResident?._id.slice(0,7)}}</span>

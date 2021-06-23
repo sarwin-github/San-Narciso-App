@@ -45,7 +45,7 @@ export class UsersService {
 	// post login user
 	postLogin(body: any): Observable<any>{
 		return this.http
-		.post(`${this.server}/api/user/signin`, body, { withCredentials : true })
+		.post(`${this.server}/api/user/signin`, body)
 		.pipe(
 			map(res => res.json()),
 			catchError(this.handleError)
@@ -55,7 +55,7 @@ export class UsersService {
 	// get signup form
 	getUserSignupForm(): Observable<any>{
 		return this.http
-		.get(`${this.server}/api/user/signup`, { withCredentials : true})
+		.get(`${this.server}/api/user/signup`)
 		.pipe(
 			map(res => res.json()),
 			catchError(this.handleError)
@@ -65,7 +65,7 @@ export class UsersService {
 	// post signup user
 	postSignUp(body: any): Observable<any>{
 		return this.http
-		.post(`${this.server}/api/user/signup`, body, { withCredentials : true})
+		.post(`${this.server}/api/user/signup`, body)
 		.pipe(
 			map(res => res.json()),
 			catchError(this.handleError)
@@ -75,7 +75,7 @@ export class UsersService {
 	// get login status from session storage
 	getUserProfile(): any {
 		return this.http
-		.get(`${this.server}/api/user/profile`, { withCredentials : true})
+		.get(`${this.server}/api/user/profile`)
 		.pipe(
 			map(res => res.json()),
 			catchError(this.handleErrorAuthorize)
@@ -90,8 +90,7 @@ export class UsersService {
 				JSON.stringify({ 
 					user: localStorage.getItem('user'),
 					refreshToken: localStorage.getItem('refreshToken') 
-				}), 
-				{ withCredentials : true })
+				}))
 			.pipe(
 				map(res => res.json()),
 				catchError(this.handleErrorAuthorize)
@@ -111,7 +110,7 @@ export class UsersService {
 	// logout user
 	logoutUser(): Observable<any>{
 		return this.http
-		.get(`${this.server}/api/user/logout`, { withCredentials : true})
+		.get(`${this.server}/api/user/logout`)
 		.pipe(
 			map(res => {
 				localStorage.clear();

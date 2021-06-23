@@ -12,7 +12,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 })
 export class BarangayClearanceComponent implements OnInit {
 	private req: Subscription;
-	public blotters: any;
+	public clearance: any;
 
 	constructor(
 		private spinner: NgxSpinnerService,
@@ -26,7 +26,7 @@ export class BarangayClearanceComponent implements OnInit {
 			console.log(result)
 			setTimeout(() => {
 				this.spinner.hide();
-				this.blotters = result.households;
+				this.clearance = result.households;
 			}, 1000);
 		});
 	}

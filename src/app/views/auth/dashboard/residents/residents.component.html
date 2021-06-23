@@ -30,7 +30,12 @@
 							</div>
 							<br>
 							
-							<div class="row">
+							<div *ngIf="residents?.length == 0">
+								<hr>
+								<h5 class="text-dark">There's currently no residents available. Add a new resident now.</h5>
+							</div>
+
+							<div class="row" *ngIf="residents?.length > 0">
 								<div class="col-12  mb-3 pr-lg-4">
 									<table class="table text-dark" style="min-height: 400px">
 										<thead>
@@ -42,7 +47,7 @@
 												<th></th>
 											</tr>
 										</thead>
-										<tbody *ngIf="residents?.length > 0">
+										<tbody>
 											<tr *ngFor="let resident of residents | searchPipe: item_search">
 												<th scope="row">
 													<span class="text-uppercase">{{resident?._id.slice(0,7)}}</span>

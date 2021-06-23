@@ -34,7 +34,7 @@ export class NonResidentService {
 	// add new resident
 	addNewNonResident(body: any): Observable<any>{
 		return this.http
-		.post(`${this.server}/api/non-resident/create`, body, { withCredentials : true})
+		.post(`${this.server}/api/non-resident/create`, body)
 		.pipe(
 			map(res => res.json()),
 			catchError(this.handleError)
@@ -44,7 +44,7 @@ export class NonResidentService {
 	// get list of residents
 	getListOfNonResidents(): any {
 		return this.http
-		.get(`${this.server}/api/non-resident/list`, { withCredentials : true})
+		.get(`${this.server}/api/non-resident/list`)
 		.pipe(
 			map(res => res.json()),
 			catchError(this.handleErrorAuthorize)

@@ -34,7 +34,7 @@ export class ResidentService {
 	// add new resident
 	addNewResident(body: any): Observable<any>{
 		return this.http
-		.post(`${this.server}/api/resident/create`, body, { withCredentials : true})
+		.post(`${this.server}/api/resident/create`, body)
 		.pipe(
 			map(res => res.json()),
 			catchError(this.handleError)
@@ -44,7 +44,7 @@ export class ResidentService {
 	// get list of residents
 	getListOfResidents(): any {
 		return this.http
-		.get(`${this.server}/api/resident/list`, { withCredentials : true})
+		.get(`${this.server}/api/resident/list`)
 		.pipe(
 			map(res => res.json()),
 			catchError(this.handleErrorAuthorize)

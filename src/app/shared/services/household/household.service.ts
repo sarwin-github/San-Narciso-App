@@ -34,7 +34,7 @@ export class HouseholdService {
 	// add new household
 	addNewHousehold(body: any): Observable<any>{
 		return this.http
-		.post(`${this.server}/api/household/create`, body, { withCredentials : true})
+		.post(`${this.server}/api/household/create`, body)
 		.pipe(
 			map(res => res.json()),
 			catchError(this.handleError)
@@ -44,7 +44,7 @@ export class HouseholdService {
 	// get list of households
 	getListOfHouseholds(): any {
 		return this.http
-		.get(`${this.server}/api/household/list`, { withCredentials : true})
+		.get(`${this.server}/api/household/list`)
 		.pipe(
 			map(res => res.json()),
 			catchError(this.handleErrorAuthorize)
