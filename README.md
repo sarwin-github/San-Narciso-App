@@ -1,5 +1,10 @@
 # Sample Landing Page of San Narciso | San Andress e-Portal
 
+Visit @ https://brgy-e-portal.herokuapp.com
+You can use the following credentials to experiment
+email: dapito.sherwin@yahoo.com
+password: 123123123
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
 
 ## Development server
